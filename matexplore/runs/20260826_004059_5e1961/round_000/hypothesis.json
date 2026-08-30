@@ -1,0 +1,85 @@
+{
+  "agent": "analyst",
+  "n_materials": 1103,
+  "n_feature_target_pairs": 152,
+  "mechanisms": [
+    {
+      "id": "H1",
+      "variable": "m* (有效质量)",
+      "chain": "m* → Seebeck S (Pisarenko/Mott) → ZT_e=S²/L",
+      "target": "ZT_e",
+      "direction": "+ (m*↑ ⇒ ZT_e↑)",
+      "evidence": {
+        "n": 0.7794972232623911,
+        "p": 0.7746318674224071
+      },
+      "boundary": "T=600K, n=1e20, 二维单层, 常数弛豫时间",
+      "falsifier": "同边界内某材料 m* 高但 ZT_e 低",
+      "next_best_test": "固定骨架单元素替换，算 m*/Eg，看 S、ZT_e 是否同向变化",
+      "grade": "screening(相关)→待 discrimination(受控对比)"
+    },
+    {
+      "id": "H2",
+      "variable": "Eg (带隙)",
+      "chain": "Eg → 抑制双极输运 → S↑ → ZT_e↑",
+      "target": "ZT_e",
+      "direction": "+ (Eg↑ ⇒ ZT_e↑)",
+      "evidence": {
+        "n": 0.6334374636228263,
+        "p": 0.7580834504480422
+      },
+      "boundary": "同上",
+      "falsifier": "同边界内宽 Eg 但 ZT_e 低(应来自 m* 或弛豫时间异常)",
+      "next_best_test": "对 seed 与替换后候选算 Eg，看方向",
+      "grade": "screening→discrimination"
+    },
+    {
+      "id": "H3",
+      "variable": "电负性均值(组成)",
+      "chain": "电负性 → 键共价性/带隙 → S → ZT_e (组成是 Eg 的代理)",
+      "target": "ZT_e",
+      "direction": "+ (电负性↑ ⇒ ZT_e↑)",
+      "evidence": {
+        "n": 0.3405228110379457,
+        "p": 0.3854294286683539,
+        "chi_vs_Eg": 0.4379145556226008,
+        "ie_vs_Eg": 0.41248616080507483
+      },
+      "boundary": "组成特征仅作无-DFT 粗筛",
+      "falsifier": "若控制 Eg/m* 后组成特征无独立增量，则是纯代理",
+      "next_best_test": "控制 Eg 的偏相关；或对同 Eg 不同组成算 S",
+      "grade": "screening(相关，可能被 Eg 混淆)"
+    },
+    {
+      "id": "H4",
+      "variable": "m* (S–σ 权衡)",
+      "chain": "m*↑ ⇒ σ↓ (μ∝1/m*) 但 PF=S²σ 仍随 S 上升",
+      "target": "log10 PF",
+      "direction": "PF 峰值在中等 m*/Eg(非单调)",
+      "evidence": {
+        "m_vs_sigma_n": -0.8732991754476839,
+        "zte_vs_pf_n": 0.3326058228707847
+      },
+      "boundary": "固定 n=1e20",
+      "falsifier": "若重质量材料 PF 反而更高且 σ 也高，则权衡不成立",
+      "next_best_test": "seed vs 替换后算 σ(PF)，看 S-σ 是否此消彼长",
+      "grade": "screening→discrimination"
+    },
+    {
+      "id": "H5",
+      "variable": "层厚(真空/√面积)",
+      "chain": "更薄二维层 → 量子限域 → S/ZT_e↑",
+      "target": "ZT_e",
+      "direction": "− (层厚↓ ⇒ ZT_e↑)",
+      "evidence": {
+        "n": -0.3112170186709647,
+        "p": -0.2753155494183887
+      },
+      "boundary": "二维单层(真空轴足够大)",
+      "falsifier": "若限域方向相反或层厚与 Eg 共变，则非独立机制",
+      "next_best_test": "固定组成，改变真空/层厚算 S",
+      "grade": "screening"
+    }
+  ],
+  "figure": "/home/wangchao/work_wc/2D_ZT/matexplore/runs/20260826_004059_5e1961/round_000/correlation_polyline.png"
+}

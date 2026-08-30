@@ -1,0 +1,21 @@
+{
+  "graph_name": "G_Eg_v1",
+  "k": 15,
+  "N_nodes": 1103,
+  "N_edges": 11840,
+  "n_components": 2,
+  "giant_component_fraction": 0.640073,
+  "isolated_nodes": 0,
+  "mean_degree": 21.469,
+  "median_degree": 18.0,
+  "min_degree": 10,
+  "max_degree": 44,
+  "creation_date": "2026-08-27T13:55:17.833173+00:00",
+  "random_seed": 42,
+  "knn_tiebreak": "fixed-seed(0) deterministic perturbation (<1e-9 * min positive distance): 并列近邻可复现且与 jid 行序无关",
+  "view": "electronic",
+  "features": "Eg_optb88vdw",
+  "distance_metric": "|Eg_i-Eg_j|",
+  "feature_transform": "raw (0=metal, NOT missing)",
+  "note": "Eg=0 金属 397 个形成零距离等价类：它们之间的 15 近邻由固定种子 tie-break 确定（可复现但金属簇内近邻无物理意义；建议后续用 DOS/有效质量作二阶 tie-break）"
+}

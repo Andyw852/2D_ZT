@@ -1,0 +1,214 @@
+{
+  "agent": "analyst",
+  "n_materials": 1103,
+  "n_feature_target_pairs": 152,
+  "hypothesis": {
+    "ZT_e": [
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "n",
+        "spearman": 0.7794972232623911,
+        "n": 675
+      },
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "p",
+        "spearman": 0.7746318674224071,
+        "n": 674
+      },
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "p",
+        "spearman": 0.7580834504480422,
+        "n": 803
+      },
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "n",
+        "spearman": 0.6334374636228263,
+        "n": 806
+      },
+      {
+        "feature": "electronegativity mean",
+        "carrier": "p",
+        "spearman": 0.3854294286683539,
+        "n": 803
+      },
+      {
+        "feature": "ionization energy mean",
+        "carrier": "p",
+        "spearman": 0.35100811956150324,
+        "n": 803
+      },
+      {
+        "feature": "electronegativity mean",
+        "carrier": "n",
+        "spearman": 0.3405228110379457,
+        "n": 806
+      },
+      {
+        "feature": "in-plane area (A^2)",
+        "carrier": "n",
+        "spearman": 0.3118378102547749,
+        "n": 806
+      }
+    ],
+    "log10 PF": [
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "p",
+        "spearman": 0.4933662551786916,
+        "n": 803
+      },
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "n",
+        "spearman": 0.44611981932353667,
+        "n": 806
+      },
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "n",
+        "spearman": 0.3326058228707847,
+        "n": 675
+      },
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "p",
+        "spearman": 0.28152101264723756,
+        "n": 674
+      },
+      {
+        "feature": "atomic mass mean",
+        "carrier": "p",
+        "spearman": 0.12722263790724872,
+        "n": 803
+      },
+      {
+        "feature": "Z (atomic number) mean",
+        "carrier": "p",
+        "spearman": 0.1259642196529995,
+        "n": 803
+      },
+      {
+        "feature": "atomic mass max",
+        "carrier": "p",
+        "spearman": 0.11135367872953546,
+        "n": 803
+      },
+      {
+        "feature": "group range",
+        "carrier": "p",
+        "spearman": -0.10664414346653972,
+        "n": 803
+      }
+    ],
+    "|S| (uV/K)": [
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "n",
+        "spearman": 0.7794972232623911,
+        "n": 675
+      },
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "p",
+        "spearman": 0.7746318674224071,
+        "n": 674
+      },
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "p",
+        "spearman": 0.7580834504480422,
+        "n": 803
+      },
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "n",
+        "spearman": 0.6334374636228263,
+        "n": 806
+      },
+      {
+        "feature": "electronegativity mean",
+        "carrier": "p",
+        "spearman": 0.3854294286683539,
+        "n": 803
+      },
+      {
+        "feature": "ionization energy mean",
+        "carrier": "p",
+        "spearman": 0.35100811956150324,
+        "n": 803
+      },
+      {
+        "feature": "electronegativity mean",
+        "carrier": "n",
+        "spearman": 0.3405228110379457,
+        "n": 806
+      },
+      {
+        "feature": "in-plane area (A^2)",
+        "carrier": "n",
+        "spearman": 0.3118378102547749,
+        "n": 806
+      }
+    ],
+    "log10 sigma": [
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "p",
+        "spearman": -0.9009914678929558,
+        "n": 674
+      },
+      {
+        "feature": "m* (median, m_e)",
+        "carrier": "n",
+        "spearman": -0.8732991754476839,
+        "n": 675
+      },
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "p",
+        "spearman": -0.6641341538907922,
+        "n": 803
+      },
+      {
+        "feature": "Eg (band gap, eV)",
+        "carrier": "n",
+        "spearman": -0.5841205950498166,
+        "n": 806
+      },
+      {
+        "feature": "in-plane area (A^2)",
+        "carrier": "p",
+        "spearman": -0.5507594978286017,
+        "n": 803
+      },
+      {
+        "feature": "vacuum / sqrt(area)",
+        "carrier": "p",
+        "spearman": 0.5421329429395181,
+        "n": 803
+      },
+      {
+        "feature": "in-plane area (A^2)",
+        "carrier": "n",
+        "spearman": -0.5316065134191842,
+        "n": 806
+      },
+      {
+        "feature": "vacuum / sqrt(area)",
+        "carrier": "n",
+        "spearman": 0.5245448565365108,
+        "n": 806
+      }
+    ],
+    "statements": [
+      "目标 ZT_e 主要由: m* (median, m_e)(n=+0.78), m* (median, m_e)(p=+0.77), Eg (band gap, eV)(p=+0.76), Eg (band gap, eV)(n=+0.63), electronegativity mean(p=+0.39) 决定",
+      "目标 log10 PF 主要由: Eg (band gap, eV)(p=+0.49), Eg (band gap, eV)(n=+0.45), m* (median, m_e)(n=+0.33), m* (median, m_e)(p=+0.28), atomic mass mean(p=+0.13) 决定",
+      "目标 |S| (uV/K) 主要由: m* (median, m_e)(n=+0.78), m* (median, m_e)(p=+0.77), Eg (band gap, eV)(p=+0.76), Eg (band gap, eV)(n=+0.63), electronegativity mean(p=+0.39) 决定",
+      "目标 log10 sigma 主要由: m* (median, m_e)(p=-0.90), m* (median, m_e)(n=-0.87), Eg (band gap, eV)(p=-0.66), Eg (band gap, eV)(n=-0.58), in-plane area (A^2)(p=-0.55) 决定"
+    ]
+  },
+  "figure": "/home/wangchao/work_wc/2D_ZT/matexplore/runs/20260826_001327_02943a/round_000/correlation_polyline.png"
+}

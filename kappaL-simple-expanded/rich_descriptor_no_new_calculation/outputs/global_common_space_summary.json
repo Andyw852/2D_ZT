@@ -1,0 +1,42 @@
+{
+  "reference_free": true,
+  "labels_used_in_coordinates": [],
+  "joint_distance": "max(symmetrized structure neighbour-rank, symmetrized pure-electronic neighbour-rank)",
+  "electronic_space_excludes": [
+    "S",
+    "sigma",
+    "kappa_e",
+    "PF",
+    "zT"
+  ],
+  "results": {
+    "n": {
+      "n_materials": 85,
+      "n_high_zt_formula_marks": 11,
+      "n_dual_screen_hits_not_high_zt": 4,
+      "n_known_high_zt_also_dual_screen": 1,
+      "lofo_auc_structure": 0.6916461916461916,
+      "lofo_auc_electronic_structure": 0.47358722358722355,
+      "lofo_auc_strict_and_common": 0.5202702702702702,
+      "map_pairwise_rank_preservation": {
+        "structure": 0.7303218785605595,
+        "pure_electronic": 0.8931958992110258,
+        "pure_joint_and": 0.6497941070751356
+      }
+    },
+    "p": {
+      "n_materials": 85,
+      "n_high_zt_formula_marks": 11,
+      "n_dual_screen_hits_not_high_zt": 3,
+      "n_known_high_zt_also_dual_screen": 3,
+      "lofo_auc_structure": 0.6916461916461916,
+      "lofo_auc_electronic_structure": 0.47358722358722355,
+      "lofo_auc_strict_and_common": 0.5202702702702702,
+      "map_pairwise_rank_preservation": {
+        "structure": 0.7303218785605595,
+        "pure_electronic": 0.8931958992110258,
+        "pure_joint_and": 0.6497941070751356
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "electronic": {
+    "temperature_K": 600.0,
+    "dos_mass_me": 0.8,
+    "conductivity_mass_me": 0.35,
+    "valley_degeneracy": 2,
+    "elastic_modulus_2d_N_per_m": 50.0,
+    "deformation_potential_eV": 6.0,
+    "effective_thickness_nm": 1.0,
+    "scattering_exponent": 0.0,
+    "mobility_retention": 0.85
+  },
+  "lattice": {
+    "heat_capacity_J_per_m3K": 1600000.0,
+    "sound_velocity_m_per_s": 2500.0,
+    "intrinsic_lifetime_ps_at_600K": 0.50,
+    "temperature_K": 600.0
+  },
+  "structure": {
+    "porosity": 0.0,
+    "pore_spacing_nm": 20.0,
+    "wrinkle_slope": 0.0,
+    "wrinkle_wavelength_nm": 20.0,
+    "stiffness_ratio": 1.0,
+    "mass_ratio": 1.0,
+    "acoustic_optical_overlap": 0.15
+  },
+  "scan": {
+    "eta_min": -6.0,
+    "eta_max": 6.0,
+    "eta_points": 241,
+    "porosity_max": 0.4,
+    "wrinkle_slope_max": 1.2,
+    "random_seed": 20260829,
+    "robust_samples": 400
+  }
+}
+

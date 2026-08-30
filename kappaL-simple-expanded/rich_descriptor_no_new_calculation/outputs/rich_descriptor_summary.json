@@ -1,0 +1,58 @@
+{
+  "method": {
+    "structure": "max(row-rank geometry-only SOAP distance, row-rank composition+lattice-physics distance)",
+    "pure_electronic": "row-rank distance in Eg/effective-mass/dielectric/spillage descriptors",
+    "rich_electronic": "max(pure-electronic rank, fixed-condition S/sigma/kappa_e fingerprint rank)",
+    "joint": "max(structure rank, rich-electronic rank), symmetrized; no fitted block weight",
+    "targets_excluded_from_coordinates": [
+      "PF",
+      "experimental kappa_L",
+      "external zT"
+    ],
+    "important_caveat": "S and sigma algebraically determine PF, so the rich transport fingerprint is analogue visualization, not an independent PF validation."
+  },
+  "carrier_results": {
+    "n": {
+      "carrier": "n",
+      "n_materials": 85,
+      "n_high_zt_formula_seeds": 11,
+      "n_non_high_zt_dual_hits": 4,
+      "n_reported_low_zt_hits": 3,
+      "n_unlabelled_dual_hits": 1,
+      "n_strict_analogues": 2,
+      "lofo_auc_structure_strict": 0.7113022113022114,
+      "lofo_auc_pure_band": 0.3882063882063882,
+      "lofo_auc_transport_fingerprint": 0.6031941031941032,
+      "lofo_auc_rich_electronic_strict": 0.3777641277641277,
+      "lofo_auc_full_strict_and": 0.5024570024570025,
+      "strict_and_map_pairwise_rank_preservation": 0.6504378539855649,
+      "descriptor_counts": {
+        "geometry_soap": 147,
+        "composition_lattice": 34,
+        "band": 9,
+        "transport_fingerprint": 5
+      }
+    },
+    "p": {
+      "carrier": "p",
+      "n_materials": 85,
+      "n_high_zt_formula_seeds": 11,
+      "n_non_high_zt_dual_hits": 3,
+      "n_reported_low_zt_hits": 2,
+      "n_unlabelled_dual_hits": 1,
+      "n_strict_analogues": 1,
+      "lofo_auc_structure_strict": 0.7113022113022114,
+      "lofo_auc_pure_band": 0.3882063882063882,
+      "lofo_auc_transport_fingerprint": 0.6498771498771498,
+      "lofo_auc_rich_electronic_strict": 0.5135135135135135,
+      "lofo_auc_full_strict_and": 0.5337837837837838,
+      "strict_and_map_pairwise_rank_preservation": 0.6536170095879771,
+      "descriptor_counts": {
+        "geometry_soap": 147,
+        "composition_lattice": 34,
+        "band": 9,
+        "transport_fingerprint": 5
+      }
+    }
+  }
+}

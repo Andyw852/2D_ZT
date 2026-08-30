@@ -1,0 +1,23 @@
+{
+  "descriptor": "geometry-only SOAP (all atoms mapped to dummy species X)",
+  "parameters": {
+    "n_max": 6,
+    "l_max": 6,
+    "sigma": 1.0,
+    "periodic": true,
+    "average": "off",
+    "species": [
+      "X"
+    ]
+  },
+  "r_cut_candidates": [
+    4.0,
+    6.0,
+    8.0
+  ],
+  "feature_dim_per_rcut": 147,
+  "pooling": "mean over atoms",
+  "normalization": "L2-normalize + SOAP kernel (applied in graph building)",
+  "species_sensitive_soap": "SKIPPED_HIGH_DIMENSION (81 elements would give ~488k features)",
+  "composition": "elemental fraction vector (81 elements), Hellinger distance"
+}

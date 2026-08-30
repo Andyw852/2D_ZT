@@ -1,0 +1,27 @@
+{
+  "graph_name": "G_n_transport_kappa_sensitivity",
+  "k": 15,
+  "N_nodes": 806,
+  "N_edges": 8091,
+  "n_components": 1,
+  "giant_component_fraction": 1.0,
+  "isolated_nodes": 0,
+  "mean_degree": 20.077,
+  "median_degree": 19.0,
+  "min_degree": 15,
+  "max_degree": 34,
+  "creation_date": "2026-08-27T13:55:17.833173+00:00",
+  "random_seed": 42,
+  "knn_tiebreak": "fixed-seed(0) deterministic perturbation (<1e-9 * min positive distance): 并列近邻可复现且与 jid 行序无关",
+  "view": "transport_kappa_sensitivity",
+  "features": [
+    "S_median",
+    "S_MAD",
+    "S_range",
+    "log_kappa_dom_geo",
+    "D_kappa",
+    "A_kappa_dom"
+  ],
+  "distance_metric": "Euclidean",
+  "feature_transform": "RobustScaler"
+}

@@ -1,0 +1,23 @@
+{
+  "graph_name": "G_electronic_p_v1",
+  "k": 15,
+  "N_nodes": 678,
+  "N_edges": 7337,
+  "n_components": 2,
+  "giant_component_fraction": 0.70059,
+  "isolated_nodes": 0,
+  "mean_degree": 21.643,
+  "median_degree": 20.0,
+  "min_degree": 1,
+  "max_degree": 42,
+  "creation_date": "2026-08-27T13:55:17.833173+00:00",
+  "random_seed": 42,
+  "knn_tiebreak": "fixed-seed(0) deterministic perturbation (<1e-9 * min positive distance): 并列近邻可复现且与 jid 行序无关",
+  "view": "electronic",
+  "features": [
+    "Eg_optb88vdw",
+    "m_hole_median"
+  ],
+  "distance_metric": "Euclidean",
+  "feature_transform": "RobustScaler"
+}

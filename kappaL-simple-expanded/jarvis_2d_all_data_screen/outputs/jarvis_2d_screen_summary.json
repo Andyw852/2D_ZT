@@ -1,0 +1,67 @@
+{
+  "scope": "all 1,103 aligned JARVIS-2D structure+electronic rows; all available n/p transport rows",
+  "coordinates_reference_free": true,
+  "labels_used_in_coordinates": [],
+  "purple_definition": {
+    "broad": "PF percentile >= 0.80 AND low-kL surrogate percentile >= 0.80",
+    "strict": "PF percentile >= 0.90 AND low-kL surrogate percentile >= 0.90"
+  },
+  "global_maps": {
+    "n_global_materials": 1103,
+    "structure_blocks": {
+      "SOAP_r4": 147,
+      "SOAP_r6": 147,
+      "SOAP_r8": 147,
+      "Magpie": 40
+    },
+    "electronic_features": [
+      "Eg_optb88vdw",
+      "Eg_mbj",
+      "Eg_hse",
+      "m_elec_median",
+      "m_elec_dom_geo",
+      "m_elec_spectral_ratio",
+      "m_hole_median",
+      "m_hole_dom_geo",
+      "m_hole_spectral_ratio"
+    ],
+    "map_pairwise_rank_preservation": {
+      "structure": 0.5486877670033459,
+      "electronic": 0.018578954358502174,
+      "joint": 0.06673104805498044
+    },
+    "map_30nn_preservation": {
+      "structure": 0.5621637957086734,
+      "electronic": 0.537775763070414,
+      "joint": 0.5459957691145362
+    }
+  },
+  "kappa_surrogate": {
+    "training_rows": 137,
+    "target_rows": 1103,
+    "target": "log10 experimental kappa_L near 300 K",
+    "grouped_cv": "5-fold by chemical system",
+    "oof_r2": 0.4498166942397176,
+    "oof_spearman": 0.6597905426848619,
+    "oof_mae_log10": 0.28033977094189066,
+    "domain_warning": "trained on 137 formula-matched JARVIS-3D structures and transferred to JARVIS-2D; ranking surrogate only"
+  },
+  "carriers": {
+    "n": {
+      "transport_covered": 806,
+      "broad_purple_top20_intersection": 36,
+      "strict_purple_top10_intersection": 10,
+      "high_zt_formula_rows": 15,
+      "high_zt_also_broad": 0,
+      "reported_low_zt_purple": 2
+    },
+    "p": {
+      "transport_covered": 803,
+      "broad_purple_top20_intersection": 38,
+      "strict_purple_top10_intersection": 18,
+      "high_zt_formula_rows": 15,
+      "high_zt_also_broad": 2,
+      "reported_low_zt_purple": 8
+    }
+  }
+}

@@ -1,0 +1,60 @@
+# =============================================================================
+# matexplore 全局配置 —— 多智能体"假设→生成→验证→反馈"闭环框架
+# 本文件面向"二维热电材料发现"实例；框架本身领域无关(见 README)。
+# =============================================================================
+
+project:
+  name: 2D_ZT_discovery
+  round_limit: 3
+  top_k_per_round: 20
+
+knowledge:
+  atlas_root: /home/wangchao/work_wc/2D_ZT/jarvis_2d_te_atlas
+  panel_csv: /home/wangchao/work_wc/2D_ZT/matexplore/reports/feature_target_panel.csv
+  correlation_csv: /home/wangchao/work_wc/2D_ZT/matexplore/reports/feature_target_correlation.csv
+  surrogate_models_dir: /home/wangchao/work_wc/2D_ZT/matexplore/skills/te-screen
+  element_properties: /home/wangchao/work_wc/2D_ZT/matexplore/skills/te-screen/element_properties.json
+  structure_source: /home/wangchao/work_wc/2D_ZT/jarvis_2d_te_atlas/data/raw/jarvis/dft_2d_snapshot.json
+
+llm:
+  provider: none
+  base_url: ""
+  api_key_env: ""
+  model: ""
+
+generation:
+  mode: both
+  substitution_groups:
+    - [S, Se, Te]
+    - [O, S, Se]
+    - [P, As, Sb]
+    - [Cl, Br, I]
+    - [Mo, W]
+    - [Cr, Mo, W]
+    - [Ga, In]
+    - [Ge, Sn, Pb]
+    - [N, P, As]
+    - [F, Cl, Br]
+  max_candidates: 200
+
+validation:
+  taskflow_root: /home/wangchao/software/taskflow
+  tf_bin: /home/wangchao/.local/bin/tf
+  skill_screen: te-screen
+  skill_relax: opt-mace-gpu
+  skill_band: band-dft-cpu
+  skill_transport: ke-dft-cpu
+  default_hpc: "3090"
+  dry_run: true
+  hpc:
+    "3090":
+      ssh_host: wangchao_3090
+      user: wangchaoyue852
+      work_dir: /home/wangchaoyue852/taskflow/work
+    jzzn:
+      ssh_host: jzzn
+      user: wangchao
+      work_dir: /public/home/wangchao/Fullerene_Network/work
+
+store:
+  root: /home/wangchao/work_wc/2D_ZT/matexplore/runs

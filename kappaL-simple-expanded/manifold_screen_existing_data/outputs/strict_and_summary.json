@@ -1,0 +1,70 @@
+{
+  "no_new_first_principles_or_transport_calculation": true,
+  "manifold_is_target_free": true,
+  "n_materials": 2137,
+  "n_seed_formulas": 10,
+  "joint_definition": "r_AND(i,j)=max(r_structure(i,j),r_electronic(i,j))",
+  "view_weight_coefficients": null,
+  "main_k": 30,
+  "k_sensitivity": [
+    15,
+    30,
+    50
+  ],
+  "edge_counts": {
+    "15": 24546,
+    "30": 49288,
+    "50": 82793
+  },
+  "graph_connected_components": {
+    "15": 1,
+    "30": 1,
+    "50": 1
+  },
+  "metrics": {
+    "structure S1": {
+      "median": 0.9501969611705122,
+      "median_ci_low": 0.8081035453010692,
+      "median_ci_high": 0.9712999437253798,
+      "recall": 7,
+      "total": 10
+    },
+    "electronic E2": {
+      "median": 0.7304445694991559,
+      "median_ci_low": 0.34946539110861,
+      "median_ci_high": 0.9454136184580754,
+      "recall": 3,
+      "total": 10
+    },
+    "joint S1+E2": {
+      "median": 0.903770399549803,
+      "median_ci_low": 0.8674732695554305,
+      "median_ci_high": 0.9526238041643151,
+      "recall": 5,
+      "total": 10
+    },
+    "strict AND k=15": {
+      "median": 0.9544175576814857,
+      "median_ci_low": 0.5647158131682611,
+      "median_ci_high": 0.9741136747326955,
+      "recall": 8,
+      "total": 10
+    },
+    "strict AND k=30": {
+      "median": 0.9786156443444006,
+      "median_ci_low": 0.5866629150253235,
+      "median_ci_high": 0.9814293753517164,
+      "recall": 7,
+      "total": 10
+    },
+    "strict AND k=50": {
+      "median": 0.9521665728756331,
+      "median_ci_low": 0.6682611142374789,
+      "median_ci_high": 0.9735509285312324,
+      "recall": 8,
+      "total": 10
+    }
+  },
+  "visual_candidate_definition": "top 30 pre-existing dual scores; no manifold proximity used",
+  "warning": "formula-level high-zT seeds are not phase-, doping-, or microstructure-resolved"
+}

@@ -1,0 +1,182 @@
+{
+  "round": 2,
+  "top_candidates": [
+    {
+      "formula": "Cl2F2PbSn",
+      "p_ZT_e": 4.2,
+      "n_ZT_e": 1.52,
+      "p_logPF": 2.95,
+      "seed": "Cl2F2Pb2"
+    },
+    {
+      "formula": "ClF3Pb2",
+      "p_ZT_e": 4.21,
+      "n_ZT_e": 1.91,
+      "p_logPF": 2.89,
+      "seed": "Cl2F2Pb2"
+    },
+    {
+      "formula": "Cl2F2GePb",
+      "p_ZT_e": 4.16,
+      "n_ZT_e": 1.59,
+      "p_logPF": 2.95,
+      "seed": "Cl2F2Pb2"
+    },
+    {
+      "formula": "BrClF2PbSn",
+      "p_ZT_e": 4.15,
+      "n_ZT_e": 1.44,
+      "p_logPF": 2.94,
+      "seed": "BrCl2FPbSn"
+    },
+    {
+      "formula": "BrF3Pb2",
+      "p_ZT_e": 4.17,
+      "n_ZT_e": 1.83,
+      "p_logPF": 2.88,
+      "seed": "BrClF2Pb2"
+    },
+    {
+      "formula": "BrClF2GePb",
+      "p_ZT_e": 4.12,
+      "n_ZT_e": 1.51,
+      "p_logPF": 2.94,
+      "seed": "BrClF2Pb2"
+    },
+    {
+      "formula": "Cl3FPbSn",
+      "p_ZT_e": 4.06,
+      "n_ZT_e": 1.38,
+      "p_logPF": 2.95,
+      "seed": "BrCl2FPbSn"
+    },
+    {
+      "formula": "Cl3FGePb",
+      "p_ZT_e": 4.02,
+      "n_ZT_e": 1.44,
+      "p_logPF": 2.95,
+      "seed": "BrCl2FGePb"
+    },
+    {
+      "formula": "Cl2F2Sn",
+      "p_ZT_e": 4.03,
+      "n_ZT_e": 1.47,
+      "p_logPF": 2.78,
+      "seed": "ClF3Sn"
+    },
+    {
+      "formula": "BrClF2Sn",
+      "p_ZT_e": 3.99,
+      "n_ZT_e": 1.38,
+      "p_logPF": 2.77,
+      "seed": "ClF3Sn"
+    }
+  ],
+  "winners": [
+    "Cl2F2PbSn",
+    "ClF3Pb2",
+    "Cl2F2GePb",
+    "BrClF2PbSn",
+    "BrF3Pb2",
+    "BrClF2GePb",
+    "Cl3FPbSn",
+    "Cl3FGePb",
+    "Cl2F2Sn",
+    "BrClF2Sn"
+  ],
+  "feedback": {
+    "agent": "collector",
+    "round": 2,
+    "n_validated": 20,
+    "winners_forwarded_to_next_round": [
+      "Cl2F2PbSn",
+      "ClF3Pb2",
+      "Cl2F2GePb",
+      "BrClF2PbSn",
+      "BrF3Pb2",
+      "BrClF2GePb",
+      "Cl3FPbSn",
+      "Cl3FGePb",
+      "Cl2F2Sn",
+      "BrClF2Sn"
+    ],
+    "top_candidates": [
+      {
+        "formula": "Cl2F2PbSn",
+        "p_ZT_e": 4.2,
+        "n_ZT_e": 1.52,
+        "p_logPF": 2.95,
+        "seed": "Cl2F2Pb2"
+      },
+      {
+        "formula": "ClF3Pb2",
+        "p_ZT_e": 4.21,
+        "n_ZT_e": 1.91,
+        "p_logPF": 2.89,
+        "seed": "Cl2F2Pb2"
+      },
+      {
+        "formula": "Cl2F2GePb",
+        "p_ZT_e": 4.16,
+        "n_ZT_e": 1.59,
+        "p_logPF": 2.95,
+        "seed": "Cl2F2Pb2"
+      },
+      {
+        "formula": "BrClF2PbSn",
+        "p_ZT_e": 4.15,
+        "n_ZT_e": 1.44,
+        "p_logPF": 2.94,
+        "seed": "BrCl2FPbSn"
+      },
+      {
+        "formula": "BrF3Pb2",
+        "p_ZT_e": 4.17,
+        "n_ZT_e": 1.83,
+        "p_logPF": 2.88,
+        "seed": "BrClF2Pb2"
+      },
+      {
+        "formula": "BrClF2GePb",
+        "p_ZT_e": 4.12,
+        "n_ZT_e": 1.51,
+        "p_logPF": 2.94,
+        "seed": "BrClF2Pb2"
+      },
+      {
+        "formula": "Cl3FPbSn",
+        "p_ZT_e": 4.06,
+        "n_ZT_e": 1.38,
+        "p_logPF": 2.95,
+        "seed": "BrCl2FPbSn"
+      },
+      {
+        "formula": "Cl3FGePb",
+        "p_ZT_e": 4.02,
+        "n_ZT_e": 1.44,
+        "p_logPF": 2.95,
+        "seed": "BrCl2FGePb"
+      },
+      {
+        "formula": "Cl2F2Sn",
+        "p_ZT_e": 4.03,
+        "n_ZT_e": 1.47,
+        "p_logPF": 2.78,
+        "seed": "ClF3Sn"
+      },
+      {
+        "formula": "BrClF2Sn",
+        "p_ZT_e": 3.99,
+        "n_ZT_e": 1.38,
+        "p_logPF": 2.77,
+        "seed": "ClF3Sn"
+      }
+    ],
+    "next_round_actions": [
+      "以本轮胜者为种子继续元素族替换(生成器已接 ledger)",
+      "对最终胜者跑 opt-mace-gpu@3090 确认稳定性",
+      "对稳定者跑 band-dft-cpu+ke-dft-cpu@jzzn 取 Eg/m*/S/σ/PF 真值",
+      "用真值回填重算相关，更新假设权重(闭环)"
+    ]
+  }
+}

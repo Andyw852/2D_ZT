@@ -1,0 +1,30 @@
+{
+  "n_complete_case_semiconductors": 3259,
+  "structure_superblock": "162 composition + 147 composition-blind SOAP -> 30 PCs",
+  "electronic_superblock": "four cross-fitted ExtraTrees C+G predictions",
+  "fusion": "each superblock centered and normalized to unit Frobenius norm",
+  "structure_to_electronic_weight": 1.0,
+  "structure_inertia_fraction": 0.5,
+  "electronic_inertia_fraction": 0.5,
+  "structure_pca_variance": 0.7527629137039185,
+  "two_dimensional_variance": 0.5132655763731028,
+  "interpretation": "visualization of recoverable electronic gradients; not a candidate score",
+  "te_benchmark_formulas_present": [
+    "Bi2Se3",
+    "Bi2Te3",
+    "Cu2Se",
+    "GeTe",
+    "Mg2Si",
+    "PbS",
+    "PbSe",
+    "PbTe",
+    "SiGe",
+    "SnSe",
+    "SnTe",
+    "SrTiO3",
+    "TiNiSn",
+    "ZrNiSn"
+  ],
+  "te_benchmark_entries_present": 27,
+  "te_benchmark_role": "external literature landmarks; not selected or ranked by the model"
+}

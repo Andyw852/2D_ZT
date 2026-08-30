@@ -1,0 +1,8 @@
+execution_date=2026-08-24T17:41:59.952175+00:00
+python_version=3.11.16
+python_executable=/home/wangchao/miniconda3/envs/te_manifold/bin/python
+platform=Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39
+jarvis_tools_version=2026.6.12
+numpy_version=2.4.6
+pandas_version=3.0.5
+requests_version=2.34.2

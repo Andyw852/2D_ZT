@@ -1,0 +1,163 @@
+{
+  "round": 2,
+  "hypothesis_statements": [
+    "目标 ZT_e 主要由: m* (median, m_e)(n=+0.78), m* (median, m_e)(p=+0.77), Eg (band gap, eV)(p=+0.76), Eg (band gap, eV)(n=+0.63), electronegativity mean(p=+0.39) 决定",
+    "目标 log10 PF 主要由: Eg (band gap, eV)(p=+0.49), Eg (band gap, eV)(n=+0.45), m* (median, m_e)(n=+0.33), m* (median, m_e)(p=+0.28), atomic mass mean(p=+0.13) 决定",
+    "目标 |S| (uV/K) 主要由: m* (median, m_e)(n=+0.78), m* (median, m_e)(p=+0.77), Eg (band gap, eV)(p=+0.76), Eg (band gap, eV)(n=+0.63), electronegativity mean(p=+0.39) 决定",
+    "目标 log10 sigma 主要由: m* (median, m_e)(p=-0.90), m* (median, m_e)(n=-0.87), Eg (band gap, eV)(p=-0.66), Eg (band gap, eV)(n=-0.58), in-plane area (A^2)(p=-0.55) 决定"
+  ],
+  "top_candidates": [
+    {
+      "formula": "FSn",
+      "p_ZT_e": 4.35,
+      "n_ZT_e": 1.82,
+      "p_logPF": 2.77,
+      "seed": "PbF4"
+    },
+    {
+      "formula": "FGe",
+      "p_ZT_e": 4.28,
+      "n_ZT_e": 1.82,
+      "p_logPF": 2.7,
+      "seed": "PbF4"
+    },
+    {
+      "formula": "ClFPb",
+      "p_ZT_e": 4.17,
+      "n_ZT_e": 2.04,
+      "p_logPF": 2.85,
+      "seed": "PbF4"
+    },
+    {
+      "formula": "BrFPb",
+      "p_ZT_e": 4.13,
+      "n_ZT_e": 1.95,
+      "p_logPF": 2.84,
+      "seed": "PbF4"
+    },
+    {
+      "formula": "BrClFPb",
+      "p_ZT_e": 3.9,
+      "n_ZT_e": 1.53,
+      "p_logPF": 2.89,
+      "seed": "PbBrCl"
+    },
+    {
+      "formula": "BrFIn",
+      "p_ZT_e": 3.9,
+      "n_ZT_e": 1.03,
+      "p_logPF": 2.76,
+      "seed": "InBr3"
+    },
+    {
+      "formula": "BiBrFO",
+      "p_ZT_e": 3.83,
+      "n_ZT_e": 0.91,
+      "p_logPF": 2.87,
+      "seed": "BiBrO"
+    },
+    {
+      "formula": "AlBiOS",
+      "p_ZT_e": 3.8,
+      "n_ZT_e": 1.53,
+      "p_logPF": 2.81,
+      "seed": "AlBiO3"
+    },
+    {
+      "formula": "AlBiOSe",
+      "p_ZT_e": 3.78,
+      "n_ZT_e": 1.51,
+      "p_logPF": 2.8,
+      "seed": "AlBiO3"
+    },
+    {
+      "formula": "CdClF",
+      "p_ZT_e": 3.71,
+      "n_ZT_e": 0.8,
+      "p_logPF": 2.85,
+      "seed": "CdCl2"
+    }
+  ],
+  "feedback": {
+    "agent": "collector",
+    "top_candidates": [
+      {
+        "formula": "FSn",
+        "p_ZT_e": 4.35,
+        "n_ZT_e": 1.82,
+        "p_logPF": 2.77,
+        "seed": "PbF4"
+      },
+      {
+        "formula": "FGe",
+        "p_ZT_e": 4.28,
+        "n_ZT_e": 1.82,
+        "p_logPF": 2.7,
+        "seed": "PbF4"
+      },
+      {
+        "formula": "ClFPb",
+        "p_ZT_e": 4.17,
+        "n_ZT_e": 2.04,
+        "p_logPF": 2.85,
+        "seed": "PbF4"
+      },
+      {
+        "formula": "BrFPb",
+        "p_ZT_e": 4.13,
+        "n_ZT_e": 1.95,
+        "p_logPF": 2.84,
+        "seed": "PbF4"
+      },
+      {
+        "formula": "BrClFPb",
+        "p_ZT_e": 3.9,
+        "n_ZT_e": 1.53,
+        "p_logPF": 2.89,
+        "seed": "PbBrCl"
+      },
+      {
+        "formula": "BrFIn",
+        "p_ZT_e": 3.9,
+        "n_ZT_e": 1.03,
+        "p_logPF": 2.76,
+        "seed": "InBr3"
+      },
+      {
+        "formula": "BiBrFO",
+        "p_ZT_e": 3.83,
+        "n_ZT_e": 0.91,
+        "p_logPF": 2.87,
+        "seed": "BiBrO"
+      },
+      {
+        "formula": "AlBiOS",
+        "p_ZT_e": 3.8,
+        "n_ZT_e": 1.53,
+        "p_logPF": 2.81,
+        "seed": "AlBiO3"
+      },
+      {
+        "formula": "AlBiOSe",
+        "p_ZT_e": 3.78,
+        "n_ZT_e": 1.51,
+        "p_logPF": 2.8,
+        "seed": "AlBiO3"
+      },
+      {
+        "formula": "CdClF",
+        "p_ZT_e": 3.71,
+        "n_ZT_e": 0.8,
+        "p_logPF": 2.85,
+        "seed": "CdCl2"
+      }
+    ],
+    "hypothesis_unchanged": true,
+    "next_round_actions": [
+      "对 top 候选跑 opt-mace-gpu@3090 确认热力学/动力学稳定性",
+      "对稳定的候选跑 band-dft-cpu+ke-dft-cpu@jzzn 取 Eg/m*/S/σ/PF 真值",
+      "用真值回填，重算 特征<->目标 相关，更新假设权重(闭环)"
+    ],
+    "note": "本轮验证为 T0 替代筛选；T1/T2 真值验证需在 3090/jzzn 实跑(见 submission_plans)"
+  }
+}

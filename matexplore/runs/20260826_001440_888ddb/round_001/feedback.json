@@ -1,0 +1,95 @@
+{
+  "agent": "collector",
+  "round": 1,
+  "n_validated": 20,
+  "winners_forwarded_to_next_round": [
+    "F4Pb",
+    "ClF3Sn",
+    "BrF3Sn",
+    "Cl2F2Pb2",
+    "BrCl2FPbSn",
+    "ClF3Ge",
+    "BrClF2Pb2",
+    "Bi2F2O2",
+    "BrF3Ge",
+    "BrCl2FGePb"
+  ],
+  "top_candidates": [
+    {
+      "formula": "F4Pb",
+      "p_ZT_e": 4.33,
+      "n_ZT_e": 2.22,
+      "p_logPF": 2.84,
+      "seed": "F4Sn"
+    },
+    {
+      "formula": "ClF3Sn",
+      "p_ZT_e": 4.19,
+      "n_ZT_e": 1.65,
+      "p_logPF": 2.77,
+      "seed": "F4Sn"
+    },
+    {
+      "formula": "BrF3Sn",
+      "p_ZT_e": 4.15,
+      "n_ZT_e": 1.56,
+      "p_logPF": 2.77,
+      "seed": "F4Sn"
+    },
+    {
+      "formula": "Cl2F2Pb2",
+      "p_ZT_e": 4.08,
+      "n_ZT_e": 1.76,
+      "p_logPF": 2.89,
+      "seed": "BrCl2FPb2"
+    },
+    {
+      "formula": "BrCl2FPbSn",
+      "p_ZT_e": 4.02,
+      "n_ZT_e": 1.3,
+      "p_logPF": 2.95,
+      "seed": "BrCl2FPb2"
+    },
+    {
+      "formula": "ClF3Ge",
+      "p_ZT_e": 4.12,
+      "n_ZT_e": 1.64,
+      "p_logPF": 2.7,
+      "seed": "F4Ge"
+    },
+    {
+      "formula": "BrClF2Pb2",
+      "p_ZT_e": 4.03,
+      "n_ZT_e": 1.68,
+      "p_logPF": 2.88,
+      "seed": "BrCl2FPb2"
+    },
+    {
+      "formula": "Bi2F2O2",
+      "p_ZT_e": 4.03,
+      "n_ZT_e": 1.14,
+      "p_logPF": 2.88,
+      "seed": "Bi2BrFO2"
+    },
+    {
+      "formula": "BrF3Ge",
+      "p_ZT_e": 4.08,
+      "n_ZT_e": 1.56,
+      "p_logPF": 2.7,
+      "seed": "F4Ge"
+    },
+    {
+      "formula": "BrCl2FGePb",
+      "p_ZT_e": 3.98,
+      "n_ZT_e": 1.36,
+      "p_logPF": 2.94,
+      "seed": "BrCl2FPb2"
+    }
+  ],
+  "next_round_actions": [
+    "以本轮胜者为种子继续元素族替换(生成器已接 ledger)",
+    "对最终胜者跑 opt-mace-gpu@3090 确认稳定性",
+    "对稳定者跑 band-dft-cpu+ke-dft-cpu@jzzn 取 Eg/m*/S/σ/PF 真值",
+    "用真值回填重算相关，更新假设权重(闭环)"
+  ]
+}

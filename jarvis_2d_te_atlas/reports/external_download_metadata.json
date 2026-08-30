@@ -1,0 +1,62 @@
+{
+  "execution_date_utc": "2026-08-25",
+  "note": "外部热电数据库下载元数据（用于验证 JARVIS dft_2d 二维热电输运图谱）。此前 round 报告因 figshare 403 / C2DB 404 / Alexandria API 404 无法下载；本次 figshare 全部恢复（302 -> S3）。",
+  "downloads": [
+    {
+      "database": "JARVIS dft_2d_2021 (version-stability check)",
+      "source": "jarvis-tools get_db_info()['dft_2d_2021']",
+      "url": "https://ndownloader.figshare.com/files/26808917",
+      "zip_file": "data/raw/external/dft_2d_2021/dft_2d_2021.json.zip",
+      "zip_sha256": "991e755ca03d89eb2a4e25dcc40ffd97ea289823cb74dc2de4e52b8cfb839673",
+      "internal_json": "d2-3-12-2021.json",
+      "json_sha256": "4bf632c62e98abd80044974ae0cebf6c7aefd081833064c35a6e8bf4cef2873c",
+      "n_records": 1079,
+      "te_fields": ["n-Seebeck", "p-Seebeck", "n-powerfact", "p-powerfact", "ncond", "pcond", "nkappa", "pkappa"],
+      "te_coverage": {"n-Seebeck": 738, "p-Seebeck": 712, "n-powerfact": 804, "p-powerfact": 804, "ncond": 805, "pcond": 805, "nkappa": 805, "pkappa": 805},
+      "reference": "https://www.nature.com/articles/s41524-020-00440-1"
+    },
+    {
+      "database": "C2DB (Computational 2D Materials Database)",
+      "source": "jarvis-tools get_db_info()['c2db']",
+      "url": "https://ndownloader.figshare.com/files/28682010",
+      "zip_file": "data/raw/external/c2db/c2db_atoms.json.zip",
+      "zip_sha256": "400fe281ed673037fe4c8cc51528891439cf2126c2ffa18c4e01e1ead5184e4a",
+      "internal_json": "c2db_atoms.json",
+      "json_sha256": "c15fb53c70c49c9cc62edac73c835e068323af959b183717594d11699f34ff47",
+      "n_records": 3520,
+      "fields": ["atoms", "id", "gap", "etot", "wf", "efermi", "raman_info"],
+      "te_fields": "NONE (dump lacks Seebeck/PF; current web model 2024-05-01 also has no seebeck keys)",
+      "reference": "https://iopscience.iop.org/article/10.1088/2053-1583/aacfc1"
+    },
+    {
+      "database": "2DMatPedia",
+      "source": "jarvis-tools get_db_info()['twod_matpd']",
+      "url": "https://ndownloader.figshare.com/files/26789006",
+      "zip_file": "data/raw/external/twod_matpd/twodmatpd.json.zip",
+      "zip_sha256": "099a9bbf5f28fe6ffa579aea1498d769dcc9da6204868bc1d071bf0b13ff4c0d",
+      "internal_json": "twodmatpd.json",
+      "json_sha256": "0f7f7c7e678a1cc4f2382abac3850255f630218f9711f47ae052a1677b024b5e",
+      "n_records": 6351,
+      "fields": ["atoms", "source_id", "exfoliation_energy_per_atom", "energy_per_atom", "total_magnetization", "thermo", "bandgap", "material_id"],
+      "te_fields": "NONE (bandgap + exfoliation only)",
+      "reference": "https://www.nature.com/articles/s41597-019-0097-3"
+    },
+    {
+      "database": "Alexandria 2D (PBE, 2024.10.1)",
+      "source": "jarvis-tools get_db_info()['alex_pbe_2d_all']",
+      "url": "https://ndownloader.figshare.com/files/49622988",
+      "zip_file": "data/raw/external/alexandria_2d/alexandria_pbe_2d.zip",
+      "zip_sha256": "89ee61523907a1312179e7afb18fd64060413534e787f78ef871dbfb8d624e6d",
+      "internal_json": "alexandria_pbe_2d_2024.10.1_jarvis_tools.json",
+      "json_sha256": "1d584152845f2ed0241d720fd1f355783f0a688c0a15e89872351968b46b2391",
+      "n_records": 137833,
+      "fields": ["atoms", "band_gap_dir", "band_gap_ind", "decomposition", "dos_ef", "e_above_hull", "e_form", "e_phase_separation", "elements", "energy_corrected", "energy_total", "formula", "mat_id", "prototype_id", "spg", "stress", "total_mag"],
+      "te_fields": "NONE (band gap + stability only)",
+      "reference": "Alexandria database (ICAMS/RUB)"
+    }
+  ],
+  "unreachable": {
+    "MatHub-2d": "http://mathub.dlut.edu.cn / www.mathub2d.com -> connection failed",
+    "Alexandria REST API": "https://alexandria.icams.rub.de/api/v1/structures/ -> 404"
+  }
+}

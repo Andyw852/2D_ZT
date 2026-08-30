@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# 大体积原始数据（可再生 / 存放于工作区外部）
+mp_kappaL/raw/
+*.npy
+
+# 大体积特征矩阵（可由 build_views.py 重算）
+mp_kappaL/processed/*.npy
+mp_kappaL/processed/soap_geo.npy
+mp_kappaL/processed/comp_frac.npy
+
+# 本地测试环境
+.testenv/
+.pytest_cache/
+
+# 图形缓存
+*.py[cod]

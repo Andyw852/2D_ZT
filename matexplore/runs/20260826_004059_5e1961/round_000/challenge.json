@@ -1,0 +1,134 @@
+{
+  "agent": "challenger",
+  "confounding": {
+    "chi_vs_Eg": 0.4379145556226008,
+    "ie_vs_Eg": 0.41248616080507483,
+    "area_vs_Eg": 0.3430700321545978,
+    "chi_vs_m": 0.42562895619184776
+  },
+  "issues": [
+    {
+      "target_id": "H1",
+      "severity": "high",
+      "issue_type": "methodology",
+      "text": "m* (有效质量) 需要 DFT 实测；当前只有相关证据(screening 级)，不能当机制结论",
+      "consequence": "若不加甄别性实验，会把相关误当因果，推荐候选可能是假阳性",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H1",
+      "severity": "medium",
+      "issue_type": "statistical",
+      "text": "最强未排除替代机制: m* 与 Eg 强相关(+0.7+)，二者不可分：H1/H2 可能是同一机制的两种描述",
+      "consequence": "若成立，H1 的方向可能是伪的",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H1",
+      "severity": "medium",
+      "issue_type": "methodology",
+      "text": "单元素替换同时改变电负性/原子质量/原子半径(如 Pb换Sn)，非严格单变量，需声明为多描述子联动对比",
+      "consequence": "替换前后对比是联动对比而非受控单变量，结论需限定在给定骨架内",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H2",
+      "severity": "high",
+      "issue_type": "methodology",
+      "text": "Eg (带隙) 需要 DFT 实测；当前只有相关证据(screening 级)，不能当机制结论",
+      "consequence": "若不加甄别性实验，会把相关误当因果，推荐候选可能是假阳性",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H2",
+      "severity": "medium",
+      "issue_type": "statistical",
+      "text": "最强未排除替代机制: m* 与 Eg 强相关(+0.7+)，二者不可分：H1/H2 可能是同一机制的两种描述",
+      "consequence": "若成立，H2 的方向可能是伪的",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H2",
+      "severity": "medium",
+      "issue_type": "methodology",
+      "text": "单元素替换同时改变电负性/原子质量/原子半径(如 Pb换Sn)，非严格单变量，需声明为多描述子联动对比",
+      "consequence": "替换前后对比是联动对比而非受控单变量，结论需限定在给定骨架内",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H3",
+      "severity": "low",
+      "issue_type": "boundary",
+      "text": "纯组成/几何特征的可算链成立，但需声明代理关系",
+      "consequence": "若混淆未排除，会把组成代理误当独立机制",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H3",
+      "severity": "high",
+      "issue_type": "statistical",
+      "text": "最强未排除替代机制: 组成特征(电负性/电离能)可能是 Eg 的代理而非独立机制: chi_Eg=0.44, IE_Eg=0.41",
+      "consequence": "若成立，H3 的方向可能是伪的",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H3",
+      "severity": "medium",
+      "issue_type": "methodology",
+      "text": "单元素替换同时改变电负性/原子质量/原子半径(如 Pb换Sn)，非严格单变量，需声明为多描述子联动对比",
+      "consequence": "替换前后对比是联动对比而非受控单变量，结论需限定在给定骨架内",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H4",
+      "severity": "high",
+      "issue_type": "methodology",
+      "text": "m* (S–σ 权衡) 需要 DFT 实测；当前只有相关证据(screening 级)，不能当机制结论",
+      "consequence": "若不加甄别性实验，会把相关误当因果，推荐候选可能是假阳性",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H4",
+      "severity": "medium",
+      "issue_type": "methodology",
+      "text": "单元素替换同时改变电负性/原子质量/原子半径(如 Pb换Sn)，非严格单变量，需声明为多描述子联动对比",
+      "consequence": "替换前后对比是联动对比而非受控单变量，结论需限定在给定骨架内",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H5",
+      "severity": "low",
+      "issue_type": "boundary",
+      "text": "纯组成/几何特征的可算链成立，但需声明代理关系",
+      "consequence": "若混淆未排除，会把组成代理误当独立机制",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H5",
+      "severity": "medium",
+      "issue_type": "statistical",
+      "text": "最强未排除替代机制: 层厚与 Eg/组成可能共变，非独立限域机制",
+      "consequence": "若成立，H5 的方向可能是伪的",
+      "location": "within-boundary"
+    },
+    {
+      "target_id": "H5",
+      "severity": "medium",
+      "issue_type": "methodology",
+      "text": "单元素替换同时改变电负性/原子质量/原子半径(如 Pb换Sn)，非严格单变量，需声明为多描述子联动对比",
+      "consequence": "替换前后对比是联动对比而非受控单变量，结论需限定在给定骨架内",
+      "location": "within-boundary"
+    }
+  ],
+  "readiness": "needs-discrimination",
+  "recommended_discriminating_test": {
+    "abstract": "对 top 候选与其 seed 做受控对比：算 Eg(及 m*)，看替换是否按预测方向移动 Eg，从而甄别 H2/H3 是因果还是代理",
+    "feasible_on_3090": [
+      "ML 带隙预测(装 MatGL，pip 可装)：对 seed 与替换后候选预测 Eg，看方向",
+      "声子动力学稳定性(phonon-mace，MACE+phonopy 已在 3090)：查虚频，过滤动力学不稳定候选(任何电子性质讨论之前的第一道真值闸)",
+      "更强甄别需 DFT(OpenMX/QE 可装)：PBE 带隙 + 有效质量"
+    ],
+    "decision_value": "把相关暗示升级为受控对比结论，直接改变候选排名"
+  },
+  "recommended_next_round": "跑一轮甄别：3090 上对 top 候选做 (a)声子动力学稳定性 + (b)ML 带隙 的 seed-vs-替换 对比"
+}

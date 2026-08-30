@@ -1,0 +1,9 @@
+{
+  "execution_date": "2026-08-24T17:54:42.091363+00:00",
+  "source": "JARVIS-DFT OPTIMADE API (official NIST host)",
+  "base_url": "https://jarvis.nist.gov/optimade/jarvisdft/v1/structures/",
+  "default_figshare_url_blocked": "https://ndownloader.figshare.com/files/38521268 (HTTP 403 in this environment)",
+  "record_count": 1103,
+  "pages_fetched": 59,
+  "saved_to": "/home/wangchao/work_wc/2D_ZT/jarvis_2d_te_atlas/data/raw/jarvis/dft_2d_snapshot.json"
+}

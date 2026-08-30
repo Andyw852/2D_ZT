@@ -1,0 +1,16 @@
+{
+  "no_new_first_principles_or_transport_calculation": true,
+  "n_materials": 2137,
+  "n_seed_formulas": 10,
+  "n_seed_rows": 33,
+  "seed_warning": "reduced-formula matches; phase, doping, dimensionality, microstructure and measurement conditions are unresolved",
+  "dual_score_quantile": 0.9,
+  "dual_score_threshold": 0.9027984747338833,
+  "view_neighbour_similarity_cutoff": 0.9,
+  "same_seed_rule": "choose seed minimizing max(r_structure, r_electronic); require both similarities >= 0.90",
+  "n_consensus_candidates": 21,
+  "old_independent_overlap": 1,
+  "independent_top30_in_direct_and_top10": 3,
+  "dual_score_top10_threshold_structure_min": 0.8358622217299811,
+  "dual_score_top10_threshold_electronic_min": 0.8365267471480784
+}

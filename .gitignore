@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.zip
+*.h5
+*.hdf5
+*.npz
+*.pkl
+*.db
+.venv/
+env/
+
+# 虚拟环境
+.testenv/
+
+# 数据文件
+jarvis_2d_te_atlas/data/
+*.npy
+*.csv
+*.json.gz
+data/raw/
+data/processed/
+taskflow-public-fix/
+kappaL-multiview-verify/

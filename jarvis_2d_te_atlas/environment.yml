@@ -1,0 +1,22 @@
+name: te_manifold
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - jarvis-tools
+      - numpy
+      - pandas
+      - scipy
+      - scikit-learn
+      - matplotlib
+      - pyarrow
+      - pymatgen
+      - ase
+      - networkx
+      - tqdm
+      - dscribe
+      - umap-learn
+      - requests

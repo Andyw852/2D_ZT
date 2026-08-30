@@ -1,0 +1,23 @@
+{
+  "graph_name": "G_structure_v1",
+  "k": 15,
+  "N_nodes": 1103,
+  "N_edges": 11746,
+  "n_components": 1,
+  "giant_component_fraction": 1.0,
+  "isolated_nodes": 0,
+  "mean_degree": 21.298,
+  "median_degree": 19.0,
+  "min_degree": 15,
+  "max_degree": 88,
+  "creation_date": "2026-08-27T13:55:17.833173+00:00",
+  "random_seed": 42,
+  "knn_tiebreak": "fixed-seed(0) deterministic perturbation (<1e-9 * min positive distance): 并列近邻可复现且与 jid 行序无关",
+  "view": "structure",
+  "features": "geometry-only SOAP(r_cut=6,n_max=6,l_max=6,sigma=1.0,periodic=True,mean-pool,L2)+elemental-fraction(Hellinger)",
+  "feature_transform": "L2-normalize SOAP + sqrt(2-2K); Hellinger; both normalized to [0,1]",
+  "distance_metric": "0.5*d_geo_norm + 0.5*d_comp_norm",
+  "kernel": "local-scale Gaussian",
+  "symmetrization": "union",
+  "normalization": "none"
+}

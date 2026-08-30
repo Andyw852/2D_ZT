@@ -1,0 +1,60 @@
+{
+  "no_new_first_principles_calculation": true,
+  "n_materials_in_space": 9029,
+  "n_lattice_training_labels": 137,
+  "lattice_label": "starrydata2 experimental kL near 300 K, formula-matched to JARVIS",
+  "electronic_label": "max(n,p) JARVIS power factor at 600 K and 1e20 cm^-3, CRTA",
+  "selected_structure_block": {
+    "block": "S2 + elastic",
+    "model": "ExtraTrees",
+    "features": [
+      "n_elements",
+      "composition_entropy",
+      "mean_atomic_number",
+      "std_atomic_number",
+      "log_mean_atomic_mass",
+      "mass_coefficient_variation",
+      "mean_electronegativity",
+      "std_electronegativity",
+      "log_density",
+      "log_volume_per_atom",
+      "log_n_atoms",
+      "log_cell_anisotropy",
+      "angle_distortion",
+      "log1p_bulk_modulus",
+      "log1p_shear_modulus",
+      "poisson_ratio"
+    ],
+    "spearman_oof": 0.6703007448615751,
+    "r2_oof": 0.45317002097427017
+  },
+  "selected_electronic_block": {
+    "block": "E2 + mass anisotropy",
+    "model": "ExtraTrees",
+    "features": [
+      "log1p_gap_ev",
+      "log_dielectric_geo",
+      "log_dielectric_anisotropy",
+      "log1p_mbj_gap",
+      "log1p_electron_mass",
+      "log1p_hole_mass",
+      "log_mass_ratio",
+      "log1p_electron_mass_spectral_ratio",
+      "log1p_hole_mass_spectral_ratio",
+      "log1p_electron_mass_complexity_proxy",
+      "log1p_hole_mass_complexity_proxy"
+    ],
+    "spearman_oof": 0.6432078436417166,
+    "r2_oof": 0.3786434332115308
+  },
+  "n_structure_top5": 452,
+  "n_electronic_top5": 452,
+  "n_intersection_top5": 28,
+  "external_high_zt_unique_formulas": 18,
+  "external_high_zt_matching_jids": 56,
+  "external_high_zt_top5_recovered_formulas": 1,
+  "external_high_zt_top5_formula_recall": 0.05555555555555555,
+  "external_high_zt_top10_recovered_formulas": 3,
+  "external_high_zt_top10_formula_recall": 0.16666666666666666,
+  "external_validation_warning": "starrydata2 zT is matched by reduced formula; polymorph, doping, dimensionality, microstructure and measurement conditions may differ from the JARVIS structure"
+}

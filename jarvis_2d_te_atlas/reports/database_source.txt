@@ -1,0 +1,85 @@
+execution_date=2026-08-24T17:42:00.490885+00:00
+python_version=3.11.16 | packaged by conda-forge | (main, Aug 21 2026, 22:44:51) [GCC 14.4.0]
+jarvis_tools_version=2026.6.12
+dataset=dft_2d
+download_url=https://ndownloader.figshare.com/files/38521268
+internal_json=d2-12-12-2022.json
+description=Obtaining 2D dataset 1.1k ...
+reference=https://doi.org/10.1016/j.commatsci.2025.114063
+Other versions:https://doi.org/10.6084/m9.figshare.6815705
+all_datasets_available=['AGRA_CHO', 'AGRA_CO', 'AGRA_COOH', 'AGRA_O', 'AGRA_OH', 'aflow2', 'alex_pbe_1d_all', 'alex_pbe_2d_all', 'alex_pbe_3d_all', 'alex_pbe_hull', 'alex_pbesol_3d_all', 'alex_scan_3d_all', 'alex_supercon', 'alignn_ff_db', 'arXiv', 'arxiv_summary', 'c2db', 'cccbdb', 'cfid_3d', 'cod', 'cod_200', 'cord19', 'dft_2d', 'dft_2d_2021', 'dft_3d', 'dft_3d_2021', 'dft_3d_2022', 'edos_pdos', 'foundry_ml_exp_bandgaps', 'halide_peroskites', 'hmof', 'hopv', 'interfacedb', 'jff', 'm3gnet_mpf', 'm3gnet_mpf_1.5mil', 'mag2d_chem', 'megnet', 'megnet2', 'mlearn', 'mp_3d', 'mp_3d_2020', 'mxene275', 'ocp100k', 'ocp10k', 'ocp_all', 'omdb', 'oqmd_3d', 'oqmd_3d_no_cfid', 'pdbbind', 'pdbbind_core', 'polymer_genome', 'qe_tb', 'qm9', 'qm9_dgl', 'qm9_std_jctc', 'qmof', 'ramandb', 'raw_files', 'rruff_ir', 'rruff_powder_xrd', 'rruff_raman_excellent', 'snumat', 'ssub', 'supercon_2d', 'supercon_3d', 'supercon_chem', 'surfacedb', 'tinnet_N', 'tinnet_O', 'tinnet_OH', 'twod_matpd', 'vacancydb']
+
+# All datasets provided by current jarvis-tools:
+  - AGRA_CHO
+  - AGRA_CO
+  - AGRA_COOH
+  - AGRA_O
+  - AGRA_OH
+  - aflow2
+  - alex_pbe_1d_all
+  - alex_pbe_2d_all
+  - alex_pbe_3d_all
+  - alex_pbe_hull
+  - alex_pbesol_3d_all
+  - alex_scan_3d_all
+  - alex_supercon
+  - alignn_ff_db
+  - arXiv
+  - arxiv_summary
+  - c2db
+  - cccbdb
+  - cfid_3d
+  - cod
+  - cod_200
+  - cord19
+  - dft_2d
+  - dft_2d_2021
+  - dft_3d
+  - dft_3d_2021
+  - dft_3d_2022
+  - edos_pdos
+  - foundry_ml_exp_bandgaps
+  - halide_peroskites
+  - hmof
+  - hopv
+  - interfacedb
+  - jff
+  - m3gnet_mpf
+  - m3gnet_mpf_1.5mil
+  - mag2d_chem
+  - megnet
+  - megnet2
+  - mlearn
+  - mp_3d
+  - mp_3d_2020
+  - mxene275
+  - ocp100k
+  - ocp10k
+  - ocp_all
+  - omdb
+  - oqmd_3d
+  - oqmd_3d_no_cfid
+  - pdbbind
+  - pdbbind_core
+  - polymer_genome
+  - qe_tb
+  - qm9
+  - qm9_dgl
+  - qm9_std_jctc
+  - qmof
+  - ramandb
+  - raw_files
+  - rruff_ir
+  - rruff_powder_xrd
+  - rruff_raman_excellent
+  - snumat
+  - ssub
+  - supercon_2d
+  - supercon_3d
+  - supercon_chem
+  - surfacedb
+  - tinnet_N
+  - tinnet_O
+  - tinnet_OH
+  - twod_matpd
+  - vacancydb

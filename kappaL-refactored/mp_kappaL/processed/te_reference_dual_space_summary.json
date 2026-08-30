@@ -1,0 +1,32 @@
+{
+  "n_complete_case": 3259,
+  "n_benchmark_entries": 27,
+  "n_benchmark_formula_families": 14,
+  "n_nonbenchmark_pool": 3232,
+  "top_fraction_each_space": 0.05,
+  "reference_neighbours": 3,
+  "n_structure_like": 162,
+  "n_electronic_like": 162,
+  "n_intersection": 19,
+  "n_robust_intersection_loo_ge_0_8": 14,
+  "random_expected_intersection": 8.120049504950495,
+  "overlap_enrichment": 2.3398872123151957,
+  "hypergeometric_p_value": 0.00035656042097510895,
+  "reference_formulas": [
+    "Bi2Se3",
+    "Bi2Te3",
+    "Cu2Se",
+    "GeTe",
+    "Mg2Si",
+    "PbS",
+    "PbSe",
+    "PbTe",
+    "SiGe",
+    "SnSe",
+    "SnTe",
+    "SrTiO3",
+    "TiNiSn",
+    "ZrNiSn"
+  ],
+  "interpretation": "descriptor similarity to predeclared TE references; not a zT, PF, weighted-mobility, or independent kappa_L ranking"
+}

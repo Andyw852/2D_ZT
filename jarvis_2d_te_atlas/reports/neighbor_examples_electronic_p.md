@@ -1,0 +1,35 @@
+## anchor JVASP-60512 (As2S3)
+  - JVASP-6844 (SeYb) w=0.889
+  - JVASP-723 (PdSe2) w=0.766
+  - JVASP-60510 (Al2Cl8Sr) w=0.733
+  - JVASP-76306 (InSe) w=0.722
+  - JVASP-60251 (InSe) w=0.722
+  - JVASP-6325 (PS4Sc) w=0.676
+  - JVASP-13598 (Br3Sm) w=0.667
+  - JVASP-9023 (Pd3Rb2S4) w=0.567
+  - JVASP-6328 (AuKS) w=0.562
+  - JVASP-6643 (K2Se5) w=0.547
+
+## anchor JVASP-6064 (Cl2Mn)
+  - JVASP-741 (PtS2) w=0.971
+  - JVASP-76312 (BrCu) w=0.724
+  - JVASP-27957 (H2Mg2O3) w=0.712
+  - JVASP-60257 (BrCu) w=0.648
+  - JVASP-6202 (Br3Ir) w=0.612
+  - JVASP-738 (O2Pt) w=0.546
+  - JVASP-6409 (BrSSb) w=0.542
+  - JVASP-687 (GaSe) w=0.469
+  - JVASP-28095 (O3Pb2) w=0.457
+  - JVASP-5874 (O2Pt) w=0.441
+
+## anchor JVASP-76648 (CoO2)
+  - JVASP-7000 (Te2Ti) w=1.000
+  - JVASP-7024 (LiN2Na4) w=1.000
+  - JVASP-7033 (CrTe2) w=1.000
+  - JVASP-7036 (LiSe4Ti2) w=1.000
+  - JVASP-6880 (CrSb2) w=1.000
+  - JVASP-6847 (FeTe2) w=1.000
+  - JVASP-6862 (S2V) w=1.000
+  - JVASP-6874 (CaSi) w=1.000
+  - JVASP-6754 (Cl2Ti) w=1.000
+  - JVASP-6625 (Si2Sr3) w=1.000

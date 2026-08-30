@@ -1,0 +1,18 @@
+{
+  "graph_name": "G_m_electron_v1",
+  "view": "mass",
+  "features": [
+    "m_elec_median"
+  ],
+  "feature_transform": "RobustScaler",
+  "distance_metric": "Euclidean",
+  "k": 15,
+  "kernel": "local-scale Gaussian",
+  "symmetrization": "union",
+  "normalization": "none",
+  "N_nodes": 678,
+  "n_components": 2,
+  "giant_component_fraction": 0.6696,
+  "creation_date": "2026-08-27T13:56:35.531565+00:00",
+  "random_seed": 42
+}

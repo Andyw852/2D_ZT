@@ -1,0 +1,6 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+# 可选：pyyaml（缺省用内置 YAML 子集解析器）

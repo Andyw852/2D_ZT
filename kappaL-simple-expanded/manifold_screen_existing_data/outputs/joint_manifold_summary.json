@@ -1,0 +1,80 @@
+{
+  "no_new_first_principles_or_transport_calculation": true,
+  "manifold_construction_is_target_free": true,
+  "n_complete_case_materials": 2137,
+  "n_seed_jids": 33,
+  "n_seed_formulas": 10,
+  "n_unknown_formula_table_materials": 1997,
+  "n_candidates_highlighted": 30,
+  "graph_k": 30,
+  "diffusion_dimensions_for_scoring": 12,
+  "structure_features": [
+    "n_elements",
+    "composition_entropy",
+    "mean_atomic_number",
+    "std_atomic_number",
+    "log_mean_atomic_mass",
+    "mass_coefficient_variation",
+    "mean_electronegativity",
+    "std_electronegativity",
+    "log_density",
+    "log_volume_per_atom",
+    "log_n_atoms",
+    "log_cell_anisotropy",
+    "angle_distortion"
+  ],
+  "electronic_features": [
+    "log1p_gap_ev",
+    "log_dielectric_geo",
+    "log_dielectric_anisotropy",
+    "log1p_mbj_gap",
+    "log1p_electron_mass",
+    "log1p_hole_mass",
+    "log_mass_ratio",
+    "log1p_electron_mass_spectral_ratio",
+    "log1p_hole_mass_spectral_ratio",
+    "log1p_electron_mass_complexity_proxy",
+    "log1p_hole_mass_complexity_proxy"
+  ],
+  "view_metrics": {
+    "electronic E0": {
+      "median_retrieval_percentile": 0.8801350590883512,
+      "mean_retrieval_percentile": 0.8055149127743387,
+      "top10_recall": 0.2,
+      "n_seed_formulas": 10
+    },
+    "electronic E2": {
+      "median_retrieval_percentile": 0.7304445694991559,
+      "mean_retrieval_percentile": 0.6256612267867192,
+      "top10_recall": 0.3,
+      "n_seed_formulas": 10
+    },
+    "joint S1+E0": {
+      "median_retrieval_percentile": 0.921496904895892,
+      "mean_retrieval_percentile": 0.8687113111986495,
+      "top10_recall": 0.6,
+      "n_seed_formulas": 10
+    },
+    "joint S1+E2": {
+      "median_retrieval_percentile": 0.903770399549803,
+      "mean_retrieval_percentile": 0.8429375351716375,
+      "top10_recall": 0.5,
+      "n_seed_formulas": 10
+    },
+    "structure S1": {
+      "median_retrieval_percentile": 0.9501969611705121,
+      "mean_retrieval_percentile": 0.8691052335396735,
+      "top10_recall": 0.7,
+      "n_seed_formulas": 10
+    }
+  },
+  "graph_node_counts": {
+    "structure S1": 2137,
+    "electronic E0": 2137,
+    "electronic E2": 2137,
+    "joint S1+E0": 2137,
+    "joint S1+E2": 2137
+  },
+  "screening_definition": "geometric mean of full-dimensional joint-manifold seed-proximity percentile and the pre-existing cross-validated dual-channel score",
+  "warning": "high-zT seeds are reduced-formula matches; polymorph, doping, dimensionality, microstructure and measurement conditions may differ"
+}

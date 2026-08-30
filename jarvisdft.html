@@ -1,0 +1,4063 @@
+<!--https://github.com/notenverwaltung/Notenverwaltungssoftware/blob/54aa0515f3b1b2c5db8471306eecfed18e154e7e/docs/overrides/main.html -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/JARVIS-Materials-Design/dbdocs/jarvisdft/">
+      
+      
+        <link rel="prev" href="../jarvisapi/">
+      
+      
+        <link rel="next" href="../jarvisff/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.13">
+    
+    
+      
+        <title>DFT - JARVIS-DB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ffa9267a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dft" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+Moved to JARVIS-Tools: <a href="https://jarvis-tools.readthedocs.io/en/master/databases.html">https://jarvis-tools.readthedocs.io/en/master/databases.html</a>
+<!--
+<link rel="stylesheet" href="https://pages.nist.gov/nist-header-footer/css/nist-combined.css">
+<script src="https://code.jquery.com/jquery-3.6.2.min.js" type="text/javascript" defer="defer"></script>
+<script src="https://pages.nist.gov/nist-header-footer/js/nist-header-footer.js" type="text/javascript" defer="defer"></script>
+
+<script async type="text/javascript" id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=NIST&subagency=github&pua=UA-66610693-1&yt=true&exts=ppsx,pps,f90,sch,rtf,wrl,txz,m1v,xlsm,msi,xsd,f,tif,eps,mpg,xml,pl,xlt,c">
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q89M6QHG7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1Q89M6QHG7');
+</script>
+-->
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="JARVIS-DB" class="md-header__button md-logo" aria-label="JARVIS-DB" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            JARVIS-DB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DFT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/JARVIS-Materials-Design/dbdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dbdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="JARVIS-DB" class="md-nav__button md-logo" aria-label="JARVIS-DB" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    JARVIS-DB
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/JARVIS-Materials-Design/dbdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dbdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jarvisapi/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          DFT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        DFT
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    Methodology
+  </a>
+  
+    <nav class="md-nav" aria-label="Methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-structure" class="md-nav__link">
+    Input structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-optimzation" class="md-nav__link">
+    Geometric optimzation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-selection" class="md-nav__link">
+    Functional selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-point-and-cut-off-convergence" class="md-nav__link">
+    K-point and cut-off convergence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dftu" class="md-nav__link">
+    DFT+U
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-orbit-coupling" class="md-nav__link">
+    Spin-orbit coupling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-dft-methods" class="md-nav__link">
+    Beyond DFT methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-functional-perturbation-theory" class="md-nav__link">
+    Density functional perturbation theory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finite-difference-method" class="md-nav__link">
+    Finite-difference method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-optics" class="md-nav__link">
+    Linear Optics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wannierization" class="md-nav__link">
+    Wannierization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boltzmann-transport" class="md-nav__link">
+    Boltzmann transport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-charge-density" class="md-nav__link">
+    Partial charge density
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-details" class="md-nav__link">
+    Property Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Property Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atomic-structure-and-derived-properties" class="md-nav__link">
+    Atomic structure and derived properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formation-energy" class="md-nav__link">
+    Formation energy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exfoliation-energies" class="md-nav__link">
+    Exfoliation energies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defect-formation-energies" class="md-nav__link">
+    Defect formation energies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronic-density-of-density-of-states" class="md-nav__link">
+    Electronic density of density of states
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronic-bandstructure" class="md-nav__link">
+    Electronic Bandstructure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-orbit-spillage-and-topological-properties" class="md-nav__link">
+    Spin-orbit spillage and topological properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-dependent-dielectric-function-and-optoelectronic-properties" class="md-nav__link">
+    Frequency dependent dielectric function and optoelectronic properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-dielectric-tensor" class="md-nav__link">
+    Static dielectric tensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piezoelectric-tensor" class="md-nav__link">
+    Piezoelectric tensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrared-intensity" class="md-nav__link">
+    Infrared intensity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic-tensor" class="md-nav__link">
+    Elastic tensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermoelectric-properties" class="md-nav__link">
+    Thermoelectric properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wannier-tight-binding-hamiltonians" class="md-nav__link">
+    Wannier tight binding Hamiltonians
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scanning-tunneling-microscopy-images" class="md-nav__link">
+    Scanning tunneling microscopy images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electric-field-gradients" class="md-nav__link">
+    Electric field gradients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dft-convergence-parameters" class="md-nav__link">
+    DFT convergence parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality-assessment" class="md-nav__link">
+    Data quality assessment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jarvisff/" class="md-nav__link">
+        FF
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jarvisml/" class="md-nav__link">
+        ML
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jarvistools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publications/" class="md-nav__link">
+        Publications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thederivedapps/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thedownloads/" class="md-nav__link">
+        Downloads
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    Methodology
+  </a>
+  
+    <nav class="md-nav" aria-label="Methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-structure" class="md-nav__link">
+    Input structure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometric-optimzation" class="md-nav__link">
+    Geometric optimzation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functional-selection" class="md-nav__link">
+    Functional selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-point-and-cut-off-convergence" class="md-nav__link">
+    K-point and cut-off convergence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dftu" class="md-nav__link">
+    DFT+U
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-orbit-coupling" class="md-nav__link">
+    Spin-orbit coupling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beyond-dft-methods" class="md-nav__link">
+    Beyond DFT methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-functional-perturbation-theory" class="md-nav__link">
+    Density functional perturbation theory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finite-difference-method" class="md-nav__link">
+    Finite-difference method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-optics" class="md-nav__link">
+    Linear Optics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wannierization" class="md-nav__link">
+    Wannierization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boltzmann-transport" class="md-nav__link">
+    Boltzmann transport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-charge-density" class="md-nav__link">
+    Partial charge density
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-details" class="md-nav__link">
+    Property Details
+  </a>
+  
+    <nav class="md-nav" aria-label="Property Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atomic-structure-and-derived-properties" class="md-nav__link">
+    Atomic structure and derived properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formation-energy" class="md-nav__link">
+    Formation energy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exfoliation-energies" class="md-nav__link">
+    Exfoliation energies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defect-formation-energies" class="md-nav__link">
+    Defect formation energies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronic-density-of-density-of-states" class="md-nav__link">
+    Electronic density of density of states
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electronic-bandstructure" class="md-nav__link">
+    Electronic Bandstructure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-orbit-spillage-and-topological-properties" class="md-nav__link">
+    Spin-orbit spillage and topological properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-dependent-dielectric-function-and-optoelectronic-properties" class="md-nav__link">
+    Frequency dependent dielectric function and optoelectronic properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-dielectric-tensor" class="md-nav__link">
+    Static dielectric tensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#piezoelectric-tensor" class="md-nav__link">
+    Piezoelectric tensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrared-intensity" class="md-nav__link">
+    Infrared intensity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic-tensor" class="md-nav__link">
+    Elastic tensor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thermoelectric-properties" class="md-nav__link">
+    Thermoelectric properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wannier-tight-binding-hamiltonians" class="md-nav__link">
+    Wannier tight binding Hamiltonians
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scanning-tunneling-microscopy-images" class="md-nav__link">
+    Scanning tunneling microscopy images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electric-field-gradients" class="md-nav__link">
+    Electric field gradients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dft-convergence-parameters" class="md-nav__link">
+    DFT convergence parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-quality-assessment" class="md-nav__link">
+    Data quality assessment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="dft">DFT</h1>
+<h2 id="overview">Overview</h2>
+<p>JARVIS-DFT is a density functional theory-based database for ~40000 3D, 
+~1000 2D materials and around a million calculated properties. JARVIS-DFT mainly uses vdW-DF-OptB88 
+functional for geometry optimization. It also uses beyond-GGA approaches, including 
+Tran-Blaha modified Becke-Johnson (TBmBJ) meta-GGA, PBE0, HSE06, DMFT, G0W0 for analyzing selective cases. 
+In addition to hosting conventional properties such as formation energies, bandgaps, elastic constants, 
+piezoelectric constants, dielectric constants, and magnetic moments, it also contains unique datasets, 
+such as exfoliation energies for van der Waals bonded materials, spin-orbit coupling spillage, 
+improved meta-GGA bandgaps, frequency-dependent dielectric function, spin-orbit spillage, 
+spectroscopy limited maximum efficiency (SLME), infrared (IR) intensities, electric field gradient (EFG), 
+heterojunction classifications, and Wannier tight-binding Hamiltonians. 
+These datasets are compared to experimental results wherever possible, to evaluate their accuracy as predictive tools. 
+JARVIS-DFT introduces protocols such as automatic k-point convergence that can be critical for 
+obtaining precise and accurate calculation results.
+<img src="https://www.nist.gov/sites/default/files/images/2020/08/20/JARVIS-DFT.png" style="float: left; margin-right: 10px;" /></p>
+<p><em>Table. A brief summary of datasets available in the JARVIS-DFT.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Material classes</strong></th>
+<th><strong>Numbers</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3D-bulk</strong></td>
+<td>33482</td>
+</tr>
+<tr>
+<td><strong>2D-bulk</strong></td>
+<td>2293</td>
+</tr>
+<tr>
+<td><strong>1D-bulk</strong></td>
+<td>235</td>
+</tr>
+<tr>
+<td><strong>0D-bulk</strong></td>
+<td>413</td>
+</tr>
+<tr>
+<td><strong>2D-monolayer</strong></td>
+<td>1105</td>
+</tr>
+<tr>
+<td><strong>2D-bilayer</strong></td>
+<td>102</td>
+</tr>
+<tr>
+<td><strong>Molecules</strong></td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>Heterostructure</strong></td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Total DFT calculated systems</strong></td>
+<td>37646</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table. A brief summary of functionals used in optimizing crystal geometry in the JARVIS-DFT.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Functionals</strong></th>
+<th><strong>Numbers</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>vdW-DF-OptB88 (OPT)</strong></td>
+<td>37646</td>
+</tr>
+<tr>
+<td><strong>vdW-DF-OptB86b (MK)</strong></td>
+<td>109</td>
+</tr>
+<tr>
+<td><strong>vdW-DF-OptPBE (OR)</strong></td>
+<td>111</td>
+</tr>
+<tr>
+<td><strong>PBE</strong></td>
+<td>99</td>
+</tr>
+<tr>
+<td><strong>LDA</strong></td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table. A brief summary of material-properties available in the JARVIS-DFT. The database is continuously expanding</em>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>JARVIS-DFT Properties</strong></th>
+<th><strong>Numbers</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Optimized crystal-structure (OPT)</strong></td>
+<td>37646</td>
+</tr>
+<tr>
+<td><strong>Formation-energy (OPT)</strong></td>
+<td>37646</td>
+</tr>
+<tr>
+<td><strong>Bandgap (OPT)</strong></td>
+<td>37646</td>
+</tr>
+<tr>
+<td><strong>Exfoliation energy (OPT)</strong></td>
+<td>819</td>
+</tr>
+<tr>
+<td><strong>Bandgap (TBmBJ)</strong></td>
+<td>15655</td>
+</tr>
+<tr>
+<td><strong>Bandgap (HSE06)</strong></td>
+<td>40</td>
+</tr>
+<tr>
+<td><strong>Bandgap (PBE0)</strong></td>
+<td>40</td>
+</tr>
+<tr>
+<td><strong>Bandgap (G0W0)</strong></td>
+<td>15</td>
+</tr>
+<tr>
+<td><strong>Bandgap (DMFT)</strong></td>
+<td>11</td>
+</tr>
+<tr>
+<td><strong>Frequency dependent dielectric tensor (OPT)</strong></td>
+<td>34045</td>
+</tr>
+<tr>
+<td><strong>Frequency dependent dielectric tensor (TBmBJ)</strong></td>
+<td>15655</td>
+</tr>
+<tr>
+<td><strong>Elastic-constants (OPT)</strong></td>
+<td>15500</td>
+</tr>
+<tr>
+<td><strong>Finite-difference phonons at Г-point (OPT)</strong></td>
+<td>15500</td>
+</tr>
+<tr>
+<td><strong>Work-function, electron-affinity (OPT)</strong></td>
+<td>1105</td>
+</tr>
+<tr>
+<td><strong>Theoretical solar-cell efficiency (SLME) (TBmBJ)</strong></td>
+<td>5097</td>
+</tr>
+<tr>
+<td><strong>Topological spin-orbit spillage (PBE+SOC)</strong></td>
+<td>11500</td>
+</tr>
+<tr>
+<td><strong>Wannier tight-binding Hamiltonians (PBE+SOC)</strong></td>
+<td>1771</td>
+</tr>
+<tr>
+<td><strong>Seebeck coefficient (OPT, BoltzTrap)</strong></td>
+<td>22190</td>
+</tr>
+<tr>
+<td><strong>Power factor (OPT, BoltzTrap)</strong></td>
+<td>22190</td>
+</tr>
+<tr>
+<td><strong>Effective mass (OPT, BoltzTrap)</strong></td>
+<td>22190</td>
+</tr>
+<tr>
+<td><strong>Magnetic moment (OPT)</strong></td>
+<td>37528</td>
+</tr>
+<tr>
+<td><strong>Piezoelectric constant (OPT, DFPT)</strong></td>
+<td>5015</td>
+</tr>
+<tr>
+<td><strong>Dielectric tensor (OPT, DFPT)</strong></td>
+<td>5015</td>
+</tr>
+<tr>
+<td><strong>Infrared intensity (OPT, DFPT)</strong></td>
+<td>5015</td>
+</tr>
+<tr>
+<td><strong>DFPT phonons at Г-point (OPT)</strong></td>
+<td>5015</td>
+</tr>
+<tr>
+<td><strong>Electric field gradient (OPT)</strong></td>
+<td>15187</td>
+</tr>
+<tr>
+<td><strong>Non-resonant Raman intensity (OPT, DFPT)</strong></td>
+<td>250</td>
+</tr>
+<tr>
+<td><strong>Scanning tunneling microscopy images (PBE+SOC)</strong></td>
+<td>770</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methodology">Methodology</h2>
+<h3 id="input-structure">Input structure</h3>
+<p>The initial/input crystal structures were obtained from the Inorganic Crystal Structure Database, 
+Materials Project, OQMD, AFLOW, COD databases. These input structures are then subjected to a set 
+of geometric and electronic optimizations (discussed below) following JARVIS-DFT workflow protocols. 
+After the geometric optimization, several materials properties are calculated .</p>
+<pre><code class="language-python"># Make sure JARVIS_VASP_PSP_DIR is correctly set for VASP pseudopotentials.
+from jarvis.io.vasp.inputs import Poscar
+from jarvis.tasks.vasp.vasp import JobFactory
+p = Poscar.from_file(&quot;POSCAR&quot;)
+print (p)
+JobFactory().all_optb88vdw_props(mat=p)
+
+</code></pre>
+<h3 id="geometric-optimzation">Geometric optimzation</h3>
+<p>DFT calculations were carried out using the Vienna Ab-initio simulation package (VASP) software using the
+workflow given on our JARVIS-Tools github page (https://github.com/usnistgov/jarvis). 
+We use the projected augmented wave method . Both the internal atomic positions and the lattice constants are 
+allowed to relax in spin-unrestricted calculations until the maximal residual Hellmann–Feynman forces on atoms 
+are smaller than 0.001 eV Å−1 and energy-tolerance of 10-7 eV with accurate precision setting (PREC=Accurate). 
+Note that force convergence is important for properties such as phonons, elastic constants etc. 
+We use spin-polarized set-up with initial magnetic moment of default value 1 muB during geometric optimization. 
+Also use conjugate gradient algorithm for ionic relaxation (IBRION=2). </p>
+<h3 id="functional-selection">Functional selection</h3>
+<p>We mainly use OptB88vdW method for our calculations, but we also carryout local density approximation (LDA) 
+and generalized gradient approximation with Perdew-Burke-Ernzerhof (GGA-PBE)-based calculations for benchmarking purposes. 
+OptB88vdW functional, has been shown to gives accurate lattice parameters for both van der Waals (vdW) and non-vdW solids. 
+TBmBJ potential is used as a meta-GGA method for better predicting the bandgaps and dielectric function of a material on the 
+OptB88vdW optimized cell.</p>
+<pre><code class="language-python">from jarvis.tasks.vasp.vasp import GenericIncars
+pbe = GenericIncars().pbe()
+optb88vdw = GenericIncars().optb88vdw()
+lda = GenericIncars().lda()
+</code></pre>
+<h3 id="k-point-and-cut-off-convergence">K-point and cut-off convergence</h3>
+<p>We use the Monkhorst-Pack scheme to generate k-points, but after the generation, 
+the grid is shifted so that one of the k-points lies on the Г-point. We included 
+the gamma-point because we were interested in computing quantities that require 
+gamma-point contribution, such as optical transition for our optoelectronic database, 
+gamma-point phonons for our elastic properties, finding multiferroic materials 
+which have negative phonons at the gamma-point. The k-points are continuously 
+stored in memory, to check that each of the new k-points generated by equation is unique. 
+The k-points line density starts from length 0, with Г-point being the only 
+k-point and is increased by 5 Å at each successive iteration if the difference 
+between the energy computed with the new k-points and the one computed with 
+previous k-points is more than the tolerance. After the convergence with a 
+particular tolerance, we compute five extra points to further ensure the
+ convergence. This procedure is repeated until convergence is found for all
+ 5 extra points. A similar convergence procedure is carried out for the plane
+ wave cut-off until the energy difference between successive iterations is 
+ less than the tolerance for 6 successive points. The plane wave cut-off is 
+ increased by 50 eV each time, starting from 500 eV. In both convergence procedures, 
+ we perform only single step electronic relaxation, i.e. no ionic relaxation is 
+ considered. When starting the cut-off energy convergence, we used a minimal
+ k-point length of 10 Å. Similarly, for the k-point convergence we started with a 
+ cut-off of 500 eV. We used Gaussian smearing (with 0.01 eV parameter) which is 
+ recommended by several DFT codes, because it is less sensitive than other methods 
+ to determine partial occupancies for each orbital. This leads to an easier DFT-SCF 
+ convergence, especially when the materials are not apriori known to be a metal or 
+ insulator, which is always the case in this work. However, it is to be emphasized 
+ that, in principle, k-points and smearing parameters should be converged together, 
+ but this requires a very computationally expensive workflow. For this reason, 
+ we choose to converge k-points and cut-off only. In addition to the above 
+ convergence procedure, we further increase the cut-off by 30% for elastic, 
+ dielectric and electric field gradient, piezoelectric tensors as the volume and 
+ shape of the material may change during the distortions.</p>
+<pre><code class="language-python">optb88 = GenericIncars().optb88vdw()
+job = JobFactory(use_incar_dict=optb88.incar, pot_type=optb88.pot_type)
+encut = job.converg_encut(mat=mat)
+length = job.converg_kpoint(mat=mat)
+energy, contcar_path = job.optimize_geometry(
+            mat=mat, encut=encut, length=length
+)
+</code></pre>
+<h3 id="dftu">DFT+U</h3>
+<p>DFT+U corrections are used only for special cases because it is somewhat tricky 
+to get formation energies from the total energies obtained from such calculations. 
+DFT+U calculations are used during magnetic topologic insulator search cases mainly. 
+We generally use U=3.0 eV or complete U-scan (0 to 3 eV) for enumerating the effects 
+of U-parameter. </p>
+<pre><code class="language-python">from jarvis.io.vasp.inputs import find_ldau_magmom
+atoms=Atoms.from_poscar('POSCAR')
+ld_soc = find_ldau_magmom(atoms=atoms,lsorbit=True)
+ld_nonsoc = find_ldau_magmom(atoms=atoms,lsorbit=False)
+
+</code></pre>
+<h3 id="spin-orbit-coupling">Spin-orbit coupling</h3>
+<p>Spin-orbit coupling usually split states that are degenerate in a nonrelativistic description. 
+We consider spin-orbit coupling (LSORBIT = .TRUE.) only during spin-orbit spillage calculations 
+for topological materials but not during geometric optimization or any other major property calculations. 
+We take into account only scalar relativistic effects. Accurate lattice-constants of materials with 
+vdW bonding can play a critical role in predicting the correct topology, as emphasized. We calculate 
+the spillage using the Perdew, Burke and Ernzerhof (PBE) functional and 1000/atom k-points, as well as 
+by analyzing the spillage along a high-symmetry Brillouin-zone path, with a 600 eV plane-wave cut-off.</p>
+<h3 id="beyond-dft-methods">Beyond DFT methods</h3>
+<p>JARVIS-DFT contains data using conventional local and semi-local methods, as well as beyond conventional 
+DFT based methods such as meta-GGA (TBmBJ), G0W0, HSE06, PBE0, DMFT etc. BDFT methods are used to 
+better predict electronic bandgaps, dielectric functions hence solar-cell efficiencies, as well 
+magnetic moment (using DMFT) of a material. HSE06 and PBE0 were used to predict accurate bandgaps 
+for exfoliable bulk and corresponding monolayer materials. We utilized two hybrid functionals: PBE0 and 
+HSE06. In PBE0 the exchange energy is given by a 3:1 ratio mix of the PBE and Hartree–Fock exchange 
+energies, respectively, while the correlation is completely given by the PBE correlation energy. 
+In HSE (Heyd–Scuseria–Ernzerhof), the exchange is given by a screened Coulomb potential, to improve 
+computational efficiency. An adjustable parameter (ω) controls how short range the interaction is. 
+HSE06 is characterized by ω=0.2, while for a choice of ω=0 HSE becomes PBE0.</p>
+<h3 id="density-functional-perturbation-theory">Density functional perturbation theory</h3>
+<p>We carry out the Density functional perturbation theory (DFPT) 
+(as implemented in the VASP code, IBRION=8) calculation on the standard conventional cell 
+for each material. We determine the Born-effective charge, piezoelectric and dielectric 
+(ionic+electronic parts) tensors and the phonon eigenvectors. DFPT is also used to 
+calculate Infrared and Raman intensities for selected materials. As mentioned earlier, 
+it is important to converge K-points, cut-off and parameters to get reliable results 
+which is taken into account in the JARVIS-DFT.</p>
+<h3 id="finite-difference-method">Finite-difference method</h3>
+<p>The elastic tensor is determined by performing six finite distortions of 
+the lattice and deriving the elastic constants from the strain-stress relationship. 
+In addition to elastic tensor, the finite difference (IBRION=6) method used predicts 
+the phonons at gamma-point for the conventional cell used.</p>
+<h3 id="linear-optics">Linear Optics</h3>
+<p>To obtain the optical properties of the materials, we calculated the imaginary part 
+of the dielectric function from the Bloch wavefunctions and eigenvalues (neglecting 
+local field effects) (LOPTICS=.TRUE.). We introduced three times as many empty conduction 
+bands as valance bands. This treatment is necessary to facilitate proper electronic transitions. 
+We choose 5000 energy grid points to have a sufficiently high resolution in dielectric function spectra. 
+Several properties such as absorption coefficient, solar-cell efficiency, and reflectivity can be 
+predicted with the dielectric function data. Note that due to bandgap underestimation the peaks may 
+beshifted. A better method such as TBmBJ, HSE06, G0W0 is necessary for predicting better behavior.</p>
+<h3 id="wannierization">Wannierization</h3>
+<p>We use Wannier90 to construct Maximally-Localized Wannier Functions (MLWF) based TB-Hamiltonians. 
+For the case of interest in this work, where we wish to describe both the valence and conduction 
+bands near the Fermi level, it is necessary to first select a set of bands to Wannierize, 
+which includes separating the conduction bands from the free-electron-like bands that generally 
+overlap with them in energy. The procedure to determine this localized subspace of Bloch 
+wavefunctions proceeds similarly to minimization described above, where after an initial guess, 
+the subspace is iteratively updated in order to minimize the spread function. After this initial 
+disentanglement step, the Wannierization of the selected subspace proceeds as described above. 
+Due to the iterative non-linear minimization employed during both the disentanglement and 
+Wannierization steps, the localization and utility of the final Wannier functions depend 
+in practice on the initial choice of orbitals that are used to begin the disentanglement procedure, 
+and which are then used as the initial guess for the Wannierization. Our initial guesses consist 
+of a set of atomic orbitals we have chosen to describe all the chemically relevant orbitals 
+for each element in typical elemental systems and compounds.</p>
+<p>During the disentanglement step, it is possible to choose an energy range that is included exactly 
+(“the frozen window”), with the result that the Wannier band structure will exactly match the DFT 
+band structure in this energy range and at the grid of k-points used in the Wannierization. 
+We use a frozen window of ± 2 eV around the Fermi-energy. This window ensures that bands near 
+the Fermi level are well described by the WTBH. For cases where the original WFs were unsatisfactory 
+(see below), we found that lowering the lower bound of this window to include all of the valence bands 
+often improves that WTBH, which we use as a second Wannierization setting. In order to validate our WTBH, 
+we calculate the maximum absolute difference (μ) between the Wannier and DFT eigenvalues within an energy 
+range of ± 2eV around the Fermi level.</p>
+<p>A weakness of this evaluation method is that highly dispersive energy bands (high (dE_nk)/dk) 
+can result in high μ values even if the WTBH is of good quality because any slight shift in the 
+k-direction of a dispersive band will result in a large energy error. We consider that systems with 
+μ less than 0.1 eV to useful for most applications, and we provide data for the user to evaluate 
+individual WTBH for their own applications.</p>
+<pre><code class="language-python">from jarvis.io.wannier.inputs import Wannier90win
+box = [[2.715, 2.715, 0], [0, 2.715, 2.715], [2.715, 0, 2.715]]
+coords = [[0, 0, 0], [0.25, 0.25, 0.25]]
+elements = [&quot;Si&quot;, &quot;Si&quot;]
+Si = Atoms(lattice_mat=box, coords=coords, elements=elements)
+Wannier90win(struct=Si, efermi=0.0).write_win(name=win)
+
+</code></pre>
+<h3 id="boltzmann-transport">Boltzmann transport</h3>
+<p>The transport properties were calculated using the Boltzmann transport equation (BTE) 
+implemented in the BoltzTrap code. The BTE is used to investigate the non-equilibrium 
+behavior of electrons and holes by statistically averaging all possible quantum states. 
+The computation of the relaxation time is very computationally expensive, 
+especially in a high-throughput context, hence a constant relaxation time approach is used here.</p>
+<pre><code class="language-python">from jarvis.tasks.boltztrap.run import run_boltztrap
+path = 'xyz'
+run_boltztrap(path)
+</code></pre>
+<h3 id="partial-charge-density">Partial charge density</h3>
+<p>The partial charge densities are used to calculate scanning tunneling microscopy images. 
+The surface charge and probability densities are calculated by integrating the local density 
+of states function (ILDOS) over an energy range of ±0.5 eV from the conduction band minima (CBM) to 
+Fermi energy (EF) and valence band maxima (VBM) to Fermi energy (EF). The STM images are calculated 
+using Tersoff-Hamann approach.</p>
+<h2 id="property-details">Property Details</h2>
+<h3 id="atomic-structure-and-derived-properties">Atomic structure and derived properties</h3>
+<p>After obtaining the initial structures from several databases, we optimize following 
+JARVIS-DFT protocols of a) converging k-points, b) converging cut-off, c) 
+converging energy, d) converging forces. These final optimized structures are analyzed in 
+terms of scalar quantities such as density, volume etc. as well as statistical functions 
+such as radial distribution function, angular distribution function, dihedral distribution function, 
+X-ray diffraction pattern etc. to know about the local atomisitic environments that controls several material-properties.</p>
+<pre><code class="language-python">from jarvis.core.atoms import Atoms
+from jarvis.analysis.structure.neighbors import NeighborsAnalysis
+from jarvis.ai.descriptors.cfid import CFID
+from jarvis.analysis.diffraction.xrd import XRD
+from jarvis.analysis.structure.spacegroup import Spacegroup3D
+
+box = [[2.715, 2.715, 0], [0, 2.715, 2.715], [2.715, 0, 2.715]]
+coords = [[0, 0, 0], [0.25, 0.25, 0.25]]
+elements = [&quot;Si&quot;, &quot;Si&quot;]
+atoms = Atoms(lattice_mat=box, coords=coords, elements=elements)
+density = round(density,2)
+
+
+spg = Spacegroup3D(atoms)
+prim_atoms = spg.primitive_atoms
+conv_atoms = spg.conventional_standard_structure
+spg_numb = spg.space_group_number
+crys_system = spg.crystal_system
+conv_params = conv_atoms.lattice.parameters
+
+packing_fr = round(atoms.packing_fraction, 3)
+
+nbr = NeighborsAnalysis(atoms)
+rdf_bins, rdf_hist, nn = nbr.get_rdf()
+nbr = NeighborsAnalysis(atoms, max_cut=10.0)
+ang1_hist, ang1_bins = nbr.ang_dist_first()
+ang2_hist, ang2_bins = nbr.ang_dist_second()
+dhd_hist, dhd_bins = nbr.get_ddf()
+
+two_thetas, d_hkls, intensities = XRD().simulate(atoms=atoms)
+
+cfid = CFID(atoms).get_comp_descp()
+
+</code></pre>
+<h3 id="formation-energy">Formation energy</h3>
+<p>The enthalpy of formation is the standard reaction enthalpy for the formation of the 
+compound from its elements (atoms or molecules) in their most stable reference states. 
+We report formation energies at 0K only based on energies directly obtained from the DFT 
+especially with OptB88vdW functional. We have calculated the elemental energies 
+(in respective crystalline forms) and treat those energies as the chemical potential. 
+These chemical potentials are subtracted from the total energies of the system to predict the 
+formation energies. If functional other than OptB88vdW is used then the unary energy needs to be provided.</p>
+<pre><code class="language-python">from jarvis.analysis.thermodynamics.energetics import form_enp
+total_energy = -9.974648
+fen = form_enp(atoms=atoms, total_energy=total_energy)
+</code></pre>
+<h3 id="exfoliation-energies">Exfoliation energies</h3>
+<p>The exfoliation energy for 2D materials is computed as the energy difference per atom for bulk and monolayer systems.</p>
+<h3 id="defect-formation-energies">Defect formation energies</h3>
+<p>Defect formation energies are available for a few 2D materials. For neutral defect 
+formation energies, we generate a at least 11 Angs. Cell for 2D materials and create 
+point defects using unique Wyckoff information. The total energy of the defect system, 
+the energy of the perfect 2D crystal and the elemental chemical potential is then used to 
+predict the defect formation energies. Currently this property is available for OptB88vdW functional only.</p>
+<pre><code class="language-python">from jarvis.analysis.thermodynamics.energetics import get_twod_defect_energy
+from jarvis.io.vasp.outputs import Vasprun
+tmp_xml=os.path.join(os.path.dirname(__file__), &quot;JVASP-667_C_C_c.xml&quot;)
+vrun=Vasprun(tmp_xml)
+Ef=get_twod_defect_energy(vrun=vrun,jid=&quot;JVASP-667&quot;,atom=&quot;C&quot;)
+</code></pre>
+<h3 id="electronic-density-of-density-of-states">Electronic density of density of states</h3>
+<p>EDOS is a spectrum of the number of allowed electron energy levels (occupied and unoccupied) 
+against energy interval (generally in electron volt). EDOS is generally calculated based on a 
+dense k-point grid with a smoothening/smearing setup. EDOS is generally rescaled with respect to 
+the Fermi-energy of the system. A high value for the DOS represents a high number for the electronic 
+states that can be occupied. Experimental methods such as scanning tunneling microscopy can be 
+used obtain EDOS. One of the obvious properties that can be calculated from EDOS is the bandgap. 
+EDOS can be based on total density of states or further resolved into atom-projected and element-projected 
+density of states. The projected EDOS provides information about the particular electronic orbitals 
+(say s,p,d,f) and specific atom (say Si) contributing towards a particular energy level. 
+We calculate EDOS for both semi-local, HSE06 and PBE0 methods. At least, DOS is provided at 
+local or semilocal materials for all the materials. </p>
+<pre><code class="language-python">from jarvis.io.vasp.outputs import Vasprun
+vrun = Vasprun('vasprun.xml')
+total_dos = vrun.total_dos
+energies = total_dos[0]
+spin_up = total_dos[1]
+spin_dn = total_dos[2]
+spdf_dos = vrun.get_spdf_dos()
+atoms_dos = vrun.get_atom_resolved_dos()
+
+</code></pre>
+<h3 id="electronic-bandstructure">Electronic Bandstructure</h3>
+<p>Following the laws of quantum mechanics only certain energy levels are allowed 
+and others could be forbidden. These levels can be discrete or spilt, called bands. 
+Electronic bands depend on crystal momentum leading to bandstructure. 
+The allowed states which are filled (upto the Fermi level) are valence bands while the 
+unoccupied bands are conduction bands. The difference in energy between the conduction 
+and valence band gives rise to the bandgaps. The materials with no bandgap are termed metals, 
+with low bandgap semiconductors and with high bandgaps insulators. We calculate bandstructure 
+using local, semi-local as well as hybrid functionals.</p>
+<pre><code class="language-python">from jarvis.io.vasp.outputs import Vasprun
+vrun = Vasprun('vasprun.xml')
+band_info = vrun.get_bandstructure(kpoints_file_path='KPOINTS')
+
+</code></pre>
+<h3 id="spin-orbit-spillage-and-topological-properties">Spin-orbit spillage and topological properties</h3>
+<p>Topological materials driven by spin-orbit coupling have different bandgaps 
+with/without spin orbit coupling effects. Spillage is calculated by comparing the
+wavefunctions of these two bandstructures. We calculate the spillage values for a 
+large set of low bandgap and high atomic mass materials, with a spillage value of 0.5 
+as a threshold to screen for potential topologically non-trivial materials. 
+The threshold denotes number of band-inverted electrons. This criterion can be 
+used for predicting non-trivial topological behavior of metals, semiconductors 
+and both perfect and defective structures.</p>
+<pre><code class="language-python">from jarvis.analysis.topological.spillage import Spillage
+spl = Spillage(wf_noso=wf_noso, wf_so=wf_so)
+info = spl.overlap_so_spinpol()
+max_spillage = round(info[&quot;spillage&quot;], 2)
+
+</code></pre>
+<h3 id="frequency-dependent-dielectric-function-and-optoelectronic-properties">Frequency dependent dielectric function and optoelectronic properties</h3>
+<p>We use linear optics theory at semilocal and meta-GGA levels to calculate 
+frequency dependent real and imaginary part of dielectric function. 
+The meta-GGA based data should predict better bandgaps hence dielectric 
+function. Note that ionic contributions are ignored in such calculations. 
+Several important properties such as absorption coefficient, electron 
+energy loss spectrum, reflectivity, solar cell efficiency etc. 
+can be calculated from the frequency dependent dielectric function.</p>
+<p>Using the absorption coefficient and bandgap (indirect and direct gaps), 
+we calculate theoretical solar cell efficiencies of a material.</p>
+<pre><code class="language-python">from jarvis.io.vasp.outputs import Vasprun
+vrun = Vasprun('vasprun.xml')
+reals, imags = vrun.dielectric_loptics
+en, abz = lvrun.avg_absorption_coefficient
+abz = abz * 100
+eff_slme = SolarEfficiency().slme(
+en, abz, indirgap, indirgap, plot_current_voltage=False
+)
+# print(&quot;SLME&quot;, 100 * eff)
+eff_sq = SolarEfficiency().calculate_SQ(indirgap)
+eff_slme = round(100 * eff_slme, 2)
+eff_sq = round(100 * eff_sq, 2)
+</code></pre>
+<h3 id="static-dielectric-tensor">Static dielectric tensor</h3>
+<p>Dielectric materials are important components in many electronic devices such as capacitors, field-effect 
+transistors computer memory (DRAM), sensors and communication circuits. Both high and 
+low-value DL materials have applications in different technologies. Static dielectric 
+constants with both ionic and electronic contributions are obtained using DFPT method. 
+The electronic part of the dielectric constant is generally in close agreement with that 
+obtained from the linear optics method mentioned above.</p>
+<pre><code class="language-python">from jarvis.io.vasp.outputs import Vasprun
+vrun = Vasprun('vasprun.xml')
+epsilon = vrun.dfpt_data[&quot;epsilon&quot;][&quot;epsilon&quot;]
+epsilon_rpa = vrun.dfpt_data[&quot;epsilon&quot;][&quot;epsilon_rpa&quot;]
+epsilon_ion = vrun.dfpt_data[&quot;epsilon&quot;][&quot;epsilon_ion&quot;]
+
+</code></pre>
+<h3 id="piezoelectric-tensor">Piezoelectric tensor</h3>
+<p>The piezoelectric effect is a reversible process where materials exhibit electrical polarization resulting 
+from an applied mechanical stress, or conversely, 
+a strain due to an applied electric field. Common applications for piezoelectricity include medical 
+applications, energy harvesting devices, actuators, sensors, motors, atomic force microscopes, and high 
+voltage power generation. PZ responses can be measured under constant strain, giving the piezoelectric 
+stress tensor e_ij or constant stress, giving the piezoelectric strain tensor d_ij . 
+Piezoelectric tensor is a 6x3 matrix.</p>
+<pre><code class="language-python">from jarvis.io.vasp.outputs import Outcar
+out = Outcar('OUTCAR')
+pza = out.piezoelectric_tensor[1]
+max_pza = np.max(np.abs(pza))
+born_charges = vrun.dfpt_data[&quot;born_charges&quot;]
+</code></pre>
+<h3 id="infrared-intensity">Infrared intensity</h3>
+<p>The infrared intensity is important for thermal-imaging, infrared-astronomy, 
+food-quality control. Infrared frequencies are classified in three categories: 
+far (30-400 cm-1), mid (400-4000 cm-1) and near (4000-14000 cm-1) IR frequencies. 
+The IR intensity is calculated obtained from the gamma-point phonon data used in the DFPT calculations.</p>
+<pre><code class="language-python">from jarvis.analysis.phonon.ir import ir_intensity
+from jarvis.io.vasp.outputs import Outcar, Vasprun
+out = Outcar('OUTCAR')
+vrun = Vasprun('vasprun.xml')
+phonon_eigenvalues = out.phonon_eigenvalues
+data = vrun.dfpt_data
+phonon_eigenvectors = data[&quot;phonon_eigenvectors&quot;]
+masses = data[&quot;masses&quot;]
+born_charges = data[&quot;born_charges&quot;]
+x, y = ir_intensity(
+      phonon_eigenvectors=phonon_eigenvectors,
+      phonon_eigenvalues=phonon_eigenvalues,
+      masses=masses,
+      born_charges=born_charges,
+)
+</code></pre>
+<h3 id="elastic-tensor">Elastic tensor</h3>
+<p>We use finite difference method on conventional cells of systems for ET calculations. For bulk material, the compliance tensor can be obtained as the inverse.</p>
+<p>Now, several other elastic properties calculated from Cij and sij. Some of the important properties are given below:</p>
+<p>KV = ((C11+C22+C33) + 2(C12+C23+C31))/9</p>
+<p>GV = ((C11+C22+C33) − (C12+C23 + C31) +3 (C44+C55+C66))/15</p>
+<p>KR = ((s11+s22+s33) + 2(s12+s23+s31))-1</p>
+<p>GR = 15(4(s11+s22+s33) - 4(s12+s23+s31) + 3(s44+s55+s66))-1</p>
+<p>KVRH =(KV+KR)/2</p>
+<p>GVRH =(GV+GR)/2</p>
+<p>ν = (3KVRH − 2GVRH)/(6KVRH+2GVRH))</p>
+<p>Here KV and GV are Voigt bulk and shear modulus, and KR and GR Reuss-bulk and shear modulus respectively. 
+The homogenous Poisson ratio is calculated as ν. The EC data can be also used to predict the 
+ductile and brittle nature of materials with Pugh (Gv/Kv) and Pettifor criteria (C12-C44) . 
+Materials with Pugh ratio value &gt;0.571 and Pettifor criteria &lt;0 should be brittle, while 
+materials with Pugh ratio value &lt;0.571 and Pettifor criteria &gt;0 should be ductile. For monolayer 
+material calculations, the elastic tensor obtained from DFT code such as VASP, assumes 
+periodic-boundary-condition (PBC). Therefore, cell vectors are used to calculate the area 
+which again is used in computing stress. When dealing with the monolayer, an arbitrary vacuum 
+padding is added in one of the direction (say z-direction). When computing EC we need to correct 
+the output by eliminating the arbitrariness of the vacuum padding. We do that as a post-processing 
+step by multiplying the Cij components (i,j≠3) by the length of the vacuum padding. Therefore, the 
+units of EC turn into Nm-1 from Nm-2.</p>
+<pre><code class="language-python">from jarvis.io.vasp.outputs import Outcar
+from jarvis.analysis.elastic.tensor import ElasticTensor
+cij = out.elastic_props)[&quot;cij&quot;]
+d = ElasticTensor(cij).to_dict()
+</code></pre>
+<p>From the associated finite-difference calculations, force constants (mainly at gamma point in our 
+case) can be calculated. Using this information, we can predict the phonon density of states and 
+bandstructure assuming the conventional cell used in the calculation is large enough (at 
+least 11 Angstrom). Note that for smaller lengths the phonon bandstructure and density of
+states can show unreasonable frequencies at off and away from gamma points.</p>
+<pre><code class="language-python">from jarvis.tasks.phonopy.run import run_phonopy
+from jarvis.io.phonopy.outputs import bandstructure_plot
+import yaml
+run_phonopy('OUTCAR')
+mesh_yaml = &quot;mesh.yaml&quot;
+band_yaml = &quot;band.yaml&quot;
+with open(mesh_yaml, &quot;r&quot;) as f:
+    doc = yaml.load(f)
+nmodes = doc[&quot;phonon&quot;][0][&quot;band&quot;]
+ph_modes = []
+
+for p in nmodes:
+    ph_modes.append(p[&quot;frequency&quot;])
+ph_modes = sorted(set(ph_modes))
+f = open(totdos, &quot;r&quot;)
+freq = []
+pdos = []
+for lines in f.readlines():
+    if not str(lines.split()[0]).startswith(&quot;#&quot;):
+        freq.append(float(lines.split()[0]))
+        pdos.append(float(lines.split()[1]))
+frequencies, distances, labels, label_points = bandstructure_plot(band_yaml)
+
+
+</code></pre>
+<h3 id="thermoelectric-properties">Thermoelectric properties</h3>
+<p>Thermoelectrics are materials that can convert a temperature gradient into 
+electric voltage, or vice-versa. Themoelectrics can be used to regenerate 
+electricity from waste heat, refrigeration and several other space-technology 
+applications. The search for efficient thermoelectric materials is an area of 
+intense research due the potential of converting waste heat into 
+electrical power, and therefore improving energy efficiency and reducing 
+fossil fuel usage.</p>
+<pre><code class="language-python">from jarvis.io.boltztrap.outputs import BoltzTrapOutput  
+from jarvis.tasks.boltztrap.run import run_boltztrap
+path = 'xyz'
+run_boltztrap(path)
+all_data = BoltzTrapOutput(path).to_dict()
+</code></pre>
+<h3 id="wannier-tight-binding-hamiltonians">Wannier tight binding Hamiltonians</h3>
+<p>Wannier functions (WF) were first introduced in 1937, and have proven to be a 
+powerful tool in the investigation of solid-state phenomenon such as polarization, 
+topology, and magnetization. WTBH is not necessarily a material properties but 
+can be useful in calculating several material properties. Mathematically, 
+WFs are a complete orthonormalized basis set that act as a bridge between a 
+delocalized plane wave representation commonly used in electronic structure 
+calculations and a localized atomic orbital basis that more naturally describes 
+chemical bonds. One of the most common ways of obtaining Wannier tight-bonding 
+Hamiltonians (WTBH) is by using the Wannier90 software package to generate maximally 
+localized Wannier functions, based on underlying density functional theory 
+(DFT) calculations.</p>
+<pre><code class="language-python">from jarvis.io.wannier.outputs import WannierHam
+wann_ham = WannierHam(filename='wannier90_hr.dat')
+vrun = &quot;vasprun.xml&quot;
+bz = wann_ham.compare_dft_wann(vasprun_path=vrun, plot=False)
+</code></pre>
+<h3 id="scanning-tunneling-microscopy-images">Scanning tunneling microscopy images</h3>
+<p>Since the invention of the scanning tunneling microscope (STM), this technique 
+has become an essential tool for characterizing material surfaces and adsorbates. 
+In addition to providing atomic insights, STM has been proven useful for characterizing 
+the electronic structure, shapes of molecular orbitals, and vibrational and magnetic
+excitations. It can also be used for manipulating adsorbates and adatoms, and for catalysis 
+and quantum information processing applications. We use Tershoff-Hamman approach to predict 
+STM images of 2D materials.</p>
+<pre><code class="language-python">from jarvis.analysis.stm.tersoff_hamann import TersoffHamannSTM
+TH_STM = TersoffHamannSTM(chg_name='PARCHG')
+t1 = TH_STM.constant_height(filename='STM.png')
+</code></pre>
+<h3 id="electric-field-gradients">Electric field gradients</h3>
+<p>EFG is a key parameter used to define Nuclear Quadrupole Resonance (NQR) 
+spectral lines EFG is defined as the second derivative in Cartesian 
+coordinates of the Coulomb potential at the nucleus position. By construction, 
+the EFG, Vii is a traceless tensor. The coordinate system, in accordance with the
+ convention used by experimentalists is chosen so that |V_zz |≥|V_yy |≥|V_xx |, 
+ which forces 0≤η&lt;1. Note that if the point group of the site in question 
+ is cubic, then by symmetry all components are zero.</p>
+<pre><code class="language-python">from jarvis.io.vasp.outputs import Outcar
+efg = out.efg_raw_tensor
+max_efg = np.max(np.abs(np.array(efg)))
+
+</code></pre>
+<h3 id="dft-convergence-parameters">DFT convergence parameters</h3>
+<p>Although density functional theory is exact in theory, its implementation 
+requires several approximations such as the choice of basis-set, 
+exchange-correlation functional, mesh-size for Brillouin zone (BZ) 
+integration and plane-wave cut-off for plane-wave basis. These parameters 
+need to be converged prior to geometric optimization and property predictions. 
+Such convergences are performed for k-point and plane wave cut-off only in 
+JARVIS-DFT leading to high quality of the data.</p>
+<h2 id="data-quality-assessment">Data quality assessment</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th>#Materials</th>
+<th><strong>MAE (<em>a</em>)</strong></th>
+<th><strong>MAE (<em>b</em>)</strong></th>
+<th><strong>MAE (<em>c</em>)</strong></th>
+<th><strong>RMSE (<em>a</em>)</strong></th>
+<th><strong>RMSE (<em>b</em>)</strong></th>
+<th><strong>RMSE (<em>c</em>)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OPT (All)</strong></td>
+<td>10052</td>
+<td>0.11</td>
+<td>0.11</td>
+<td>0.18</td>
+<td>0.29</td>
+<td>0.30</td>
+<td>0.58</td>
+</tr>
+<tr>
+<td><strong>PBE (All)</strong></td>
+<td>10052</td>
+<td>0.13</td>
+<td>0.14</td>
+<td>0.23</td>
+<td>0.30</td>
+<td>0.29</td>
+<td>0.61</td>
+</tr>
+<tr>
+<td><strong>OPT (vdW)</strong></td>
+<td>2241</td>
+<td>0.20</td>
+<td>0.21</td>
+<td>0.44</td>
+<td>0.44</td>
+<td>0.44</td>
+<td>0.99</td>
+</tr>
+<tr>
+<td><strong>PBE (vdW)</strong></td>
+<td>2241</td>
+<td>0.26</td>
+<td>0.29</td>
+<td>0.62</td>
+<td>0.45</td>
+<td>0.51</td>
+<td>1.09</td>
+</tr>
+<tr>
+<td><strong>OPT (non-vdW)</strong></td>
+<td>7811</td>
+<td>0.08</td>
+<td>0.08</td>
+<td>0.11</td>
+<td>0.23</td>
+<td>0.24</td>
+<td>0.39</td>
+</tr>
+<tr>
+<td><strong>PBE (non-vdW)</strong></td>
+<td>7811</td>
+<td>0.09</td>
+<td>0.09</td>
+<td>0.12</td>
+<td>0.22</td>
+<td>0.25</td>
+<td>0.36</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table: Comparison of bandgaps obtained from OPT functional and MBJ potential schemes compared with experimental results and DFT data available in different databases. Materials, space-group (SG), Inorganic Crystal Structure Database (ICSD#) id, Materials-Project (MP#) id, JARVIS-DFT id (JV#), bandgap from MP (MP), bandgap from AFLOW, bandgap from OQMD, our OptB88vdW bandgap (OPT), Tran-Blah modified Becke-Johnson potential bandgap (MBJ), Heyd-Scuseria-Ernzerhof (HSE06) and experimental bandgaps (eV) data are shown. Experimental data were obtained from</em> <em>18,21,46,47__. MAE denotes the mean absolute error, while SC is the Spearman&#39;s coefficient.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Mats.</strong></th>
+<th><strong>SG</strong></th>
+<th><strong>ICSD#</strong></th>
+<th><strong>MP#</strong></th>
+<th><strong>JV#</strong></th>
+<th><strong>MP</strong></th>
+<th><strong>AFLOW</strong></th>
+<th><strong>OQMD</strong></th>
+<th><strong>OPT</strong></th>
+<th><strong>MBJ</strong></th>
+<th><strong>HSE06</strong></th>
+<th><strong>Exp.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>Fd-3m</td>
+<td>28857</td>
+<td>66</td>
+<td>91</td>
+<td>4.11</td>
+<td>4.12</td>
+<td>4.4</td>
+<td>4.46</td>
+<td>5.04</td>
+<td>5.26</td>
+<td>5.5</td>
+</tr>
+<tr>
+<td>Si</td>
+<td>Fd-3m</td>
+<td>29287</td>
+<td>149</td>
+<td>1002</td>
+<td>0.61</td>
+<td>0.61</td>
+<td>0.8</td>
+<td>0.73</td>
+<td>1.28</td>
+<td>1.22</td>
+<td>1.17</td>
+</tr>
+<tr>
+<td>Ge</td>
+<td>Fd-3m</td>
+<td>41980</td>
+<td>32</td>
+<td>890</td>
+<td>0.0</td>
+<td>0</td>
+<td>0.4</td>
+<td>0.01</td>
+<td>0.61</td>
+<td>0.82</td>
+<td>0.74</td>
+</tr>
+<tr>
+<td>BN</td>
+<td>P63/mmc</td>
+<td>167799</td>
+<td>984</td>
+<td>17</td>
+<td>4.48</td>
+<td>4.51</td>
+<td>4.4</td>
+<td>4.46</td>
+<td>6.11</td>
+<td>5.5</td>
+<td>6.2</td>
+</tr>
+<tr>
+<td>AlN</td>
+<td>P63mc</td>
+<td>31169</td>
+<td>661</td>
+<td>39</td>
+<td>4.06</td>
+<td>4.06</td>
+<td>4.5</td>
+<td>4.47</td>
+<td>5.20</td>
+<td>5.49</td>
+<td>6.19</td>
+</tr>
+<tr>
+<td>AlN</td>
+<td>F-43m</td>
+<td>67780</td>
+<td>1700</td>
+<td>7844</td>
+<td>3.31</td>
+<td>3.31</td>
+<td>-</td>
+<td>3.55</td>
+<td>4.80</td>
+<td>4.55</td>
+<td>4.9</td>
+</tr>
+<tr>
+<td>GaN</td>
+<td>P63mc</td>
+<td>34476</td>
+<td>804</td>
+<td>30</td>
+<td>1.74</td>
+<td>1.91</td>
+<td>2.1</td>
+<td>1.94</td>
+<td>3.08</td>
+<td>3.15</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>GaN</td>
+<td>F-43m</td>
+<td>157511</td>
+<td>830</td>
+<td>8169</td>
+<td>1.57</td>
+<td>1.75</td>
+<td>-</td>
+<td>1.79</td>
+<td>2.9</td>
+<td>2.85</td>
+<td>3.28</td>
+</tr>
+<tr>
+<td>InN</td>
+<td>P63mc</td>
+<td>162684</td>
+<td>22205</td>
+<td>1180</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>-</td>
+<td>0.23</td>
+<td>0.76</td>
+<td>-</td>
+<td>0.72</td>
+</tr>
+<tr>
+<td>BP</td>
+<td>F-43m</td>
+<td>29050</td>
+<td>1479</td>
+<td>1312</td>
+<td>1.24</td>
+<td>1.25</td>
+<td>1.4</td>
+<td>1.51</td>
+<td>1.91</td>
+<td>1.98</td>
+<td>2.1</td>
+</tr>
+<tr>
+<td>GaP</td>
+<td>F-43m</td>
+<td>41676</td>
+<td>2490</td>
+<td>1393</td>
+<td>1.59</td>
+<td>1.64</td>
+<td>1.7</td>
+<td>1.48</td>
+<td>2.37</td>
+<td>2.28</td>
+<td>2.35</td>
+</tr>
+<tr>
+<td>AlP</td>
+<td>F-43m</td>
+<td>24490</td>
+<td>1550</td>
+<td>1327</td>
+<td>1.63</td>
+<td>1.63</td>
+<td>1.7</td>
+<td>1.79</td>
+<td>2.56</td>
+<td>2.30</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>InP</td>
+<td>F-43m</td>
+<td>41443</td>
+<td>20351</td>
+<td>1183</td>
+<td>0.47</td>
+<td>0.58</td>
+<td>0.7</td>
+<td>0.89</td>
+<td>1.39</td>
+<td>1.43</td>
+<td>1.42</td>
+</tr>
+<tr>
+<td>AlSb</td>
+<td>F-43m</td>
+<td>24804</td>
+<td>2624</td>
+<td>1408</td>
+<td>1.23</td>
+<td>1.23</td>
+<td>1.4</td>
+<td>1.32</td>
+<td>1.77</td>
+<td>1.80</td>
+<td>1.69</td>
+</tr>
+<tr>
+<td>InSb</td>
+<td>F-43m</td>
+<td>24519</td>
+<td>20012</td>
+<td>1189</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.02</td>
+<td>0.80</td>
+<td>0.45</td>
+<td>0.24</td>
+</tr>
+<tr>
+<td>GaAs</td>
+<td>F-43m</td>
+<td>41674</td>
+<td>2534</td>
+<td>1174</td>
+<td>0.19</td>
+<td>0.30</td>
+<td>0.8</td>
+<td>0.75</td>
+<td>1.32</td>
+<td>1.40</td>
+<td>1.52</td>
+</tr>
+<tr>
+<td>InAs</td>
+<td>F-43m</td>
+<td>24518</td>
+<td>20305</td>
+<td>97</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.3</td>
+<td>0.15</td>
+<td>0.40</td>
+<td>0.45</td>
+<td>0.42</td>
+</tr>
+<tr>
+<td>BAs</td>
+<td>F-43m</td>
+<td>43871</td>
+<td>10044</td>
+<td>7630</td>
+<td>1.2</td>
+<td>1.2</td>
+<td>1.4</td>
+<td>1.42</td>
+<td>1.93</td>
+<td>1.86</td>
+<td>1.46</td>
+</tr>
+<tr>
+<td>MoS2</td>
+<td>P63/mmc</td>
+<td>24000</td>
+<td>2815</td>
+<td>54</td>
+<td>1.23</td>
+<td>1.25</td>
+<td>1.3</td>
+<td>0.92</td>
+<td>1.33</td>
+<td>1.49</td>
+<td>1.29</td>
+</tr>
+<tr>
+<td>MoSe2</td>
+<td>P63/mmc</td>
+<td>49800</td>
+<td>1634</td>
+<td>57</td>
+<td>1.42</td>
+<td>1.03</td>
+<td>1.0</td>
+<td>0.91</td>
+<td>1.32</td>
+<td>1.40</td>
+<td>1.11</td>
+</tr>
+<tr>
+<td>WS2</td>
+<td>P63/mmc</td>
+<td>56014</td>
+<td>224</td>
+<td>72</td>
+<td>1.56</td>
+<td>1.29</td>
+<td>1.4</td>
+<td>0.72</td>
+<td>1.51</td>
+<td>1.6</td>
+<td>1.38</td>
+</tr>
+<tr>
+<td>WSe2</td>
+<td>P63/mmc</td>
+<td>40752</td>
+<td>1821</td>
+<td>75</td>
+<td>1.45</td>
+<td>1.22</td>
+<td>1.2</td>
+<td>1.05</td>
+<td>1.44</td>
+<td>1.52</td>
+<td>1.23</td>
+</tr>
+<tr>
+<td>Al2O3</td>
+<td>R-3c</td>
+<td>600672</td>
+<td>1143</td>
+<td>32</td>
+<td>5.85</td>
+<td>5.85</td>
+<td>6.3</td>
+<td>6.43</td>
+<td>7.57</td>
+<td>8.34</td>
+<td>8.8</td>
+</tr>
+<tr>
+<td>CdTe</td>
+<td>F-43m</td>
+<td>31844</td>
+<td>406</td>
+<td>23</td>
+<td>0.59</td>
+<td>0.71</td>
+<td>1.1</td>
+<td>0.83</td>
+<td>1.64</td>
+<td>1.79</td>
+<td>1.61</td>
+</tr>
+<tr>
+<td>SnTe</td>
+<td>Fm-3m</td>
+<td>52489</td>
+<td>1883</td>
+<td>7860</td>
+<td>0.04</td>
+<td>0.25</td>
+<td>0.3</td>
+<td>0.04</td>
+<td>0.16</td>
+<td>0.17</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>SnSe</td>
+<td>Pnma</td>
+<td>60933</td>
+<td>691</td>
+<td>299</td>
+<td>0.52</td>
+<td>-</td>
+<td>0.6</td>
+<td>0.71</td>
+<td>1.25</td>
+<td>0.89</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>MgO</td>
+<td>Fm-3m</td>
+<td>9863</td>
+<td>1265</td>
+<td>116</td>
+<td>4.45</td>
+<td>4.47</td>
+<td>5.3</td>
+<td>5.13</td>
+<td>6.80</td>
+<td>7.13</td>
+<td>7.83</td>
+</tr>
+<tr>
+<td>CaO</td>
+<td>Fm-3m</td>
+<td>26959</td>
+<td>2605</td>
+<td>1405</td>
+<td>3.63</td>
+<td>3.64</td>
+<td>3.8</td>
+<td>3.74</td>
+<td>5.29</td>
+<td>5.35</td>
+<td>7.0</td>
+</tr>
+<tr>
+<td>CdS</td>
+<td>P6_3mc</td>
+<td>31074</td>
+<td>672</td>
+<td>95</td>
+<td>1.2</td>
+<td>1.25</td>
+<td>1.4</td>
+<td>1.06</td>
+<td>2.61</td>
+<td>-</td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>CdS</td>
+<td>F-43m</td>
+<td>29278</td>
+<td>2469</td>
+<td>8003</td>
+<td>1.05</td>
+<td>1.19</td>
+<td>1.4</td>
+<td>0.99</td>
+<td>2.52</td>
+<td>2.14</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>CdSe</td>
+<td>F-43m</td>
+<td>41528</td>
+<td>2691</td>
+<td>1192</td>
+<td>0.51</td>
+<td>0.64</td>
+<td>1.0</td>
+<td>0.79</td>
+<td>1.84</td>
+<td>1.52</td>
+<td>1.85</td>
+</tr>
+<tr>
+<td>MgS</td>
+<td>F-43m</td>
+<td>159401</td>
+<td>1315</td>
+<td>1300</td>
+<td>2.76</td>
+<td>3.39</td>
+<td>3.6</td>
+<td>2.95</td>
+<td>4.26</td>
+<td>4.66</td>
+<td>4.78</td>
+</tr>
+<tr>
+<td>MgSe</td>
+<td>Fm-3m</td>
+<td>53946</td>
+<td>10760</td>
+<td>7678</td>
+<td>1.77</td>
+<td>1.77</td>
+<td>1.8</td>
+<td>2.12</td>
+<td>3.37</td>
+<td>2.74</td>
+<td>2.47</td>
+</tr>
+<tr>
+<td>Mats.</td>
+<td>SG</td>
+<td>ICSD#</td>
+<td>MP#</td>
+<td>JV#</td>
+<td>MP</td>
+<td>AFLOW</td>
+<td>OQMD</td>
+<td>OPT</td>
+<td>MBJ</td>
+<td>HSE</td>
+<td>Exp.</td>
+</tr>
+<tr>
+<td>MgTe</td>
+<td>F-43m</td>
+<td>159402</td>
+<td>13033</td>
+<td>7762</td>
+<td>2.32</td>
+<td>2.32</td>
+<td>2.5</td>
+<td>2.49</td>
+<td>3.49</td>
+<td>3.39</td>
+<td>3.60</td>
+</tr>
+<tr>
+<td>BaS</td>
+<td>Fm-3m</td>
+<td>30240</td>
+<td>1500</td>
+<td>1315</td>
+<td>2.15</td>
+<td>2.15</td>
+<td>2.4</td>
+<td>2.15</td>
+<td>3.23</td>
+<td>3.11</td>
+<td>3.88</td>
+</tr>
+<tr>
+<td>BaSe</td>
+<td>Fm-3m</td>
+<td>43655</td>
+<td>1253</td>
+<td>1294</td>
+<td>1.95</td>
+<td>1.95</td>
+<td>2.9</td>
+<td>1.97</td>
+<td>2.85</td>
+<td>2.79</td>
+<td>3.58</td>
+</tr>
+<tr>
+<td>BaTe</td>
+<td>Fm-3m</td>
+<td>29152</td>
+<td>1000</td>
+<td>1267</td>
+<td>1.59</td>
+<td>1.59</td>
+<td>1.7</td>
+<td>1.61</td>
+<td>2.15</td>
+<td>2.31</td>
+<td>3.08</td>
+</tr>
+<tr>
+<td>TiO2</td>
+<td>P42/mnm</td>
+<td>9161</td>
+<td>2657</td>
+<td>5</td>
+<td>1.78</td>
+<td>2.26</td>
+<td>1.8</td>
+<td>1.77</td>
+<td>2.07</td>
+<td>3.34</td>
+<td>3.30</td>
+</tr>
+<tr>
+<td>TiO2</td>
+<td>I41/amd</td>
+<td>9852</td>
+<td>390</td>
+<td>104</td>
+<td>2.05</td>
+<td>2.53</td>
+<td>2.0</td>
+<td>2.02</td>
+<td>2.47</td>
+<td>-</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td>Cu2O</td>
+<td>Pn-3m</td>
+<td>26183</td>
+<td>361</td>
+<td>1216</td>
+<td>0.5</td>
+<td>-</td>
+<td>0.8</td>
+<td>0.13</td>
+<td>0.49</td>
+<td>1.98</td>
+<td>2.17</td>
+</tr>
+<tr>
+<td>CuAlO2</td>
+<td>R-3m</td>
+<td>25593</td>
+<td>3748</td>
+<td>1453</td>
+<td>1.8</td>
+<td>2.0</td>
+<td>2.4</td>
+<td>2.06</td>
+<td>2.06</td>
+<td>-</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>ZrO2</td>
+<td>P21/c</td>
+<td>15983</td>
+<td>2858</td>
+<td>113</td>
+<td>3.47</td>
+<td>3.56</td>
+<td>4.0</td>
+<td>3.62</td>
+<td>4.21</td>
+<td>-</td>
+<td>5.5</td>
+</tr>
+<tr>
+<td>HfO2</td>
+<td>P21/c</td>
+<td>27313</td>
+<td>352</td>
+<td>9147</td>
+<td>4.02</td>
+<td>4.02</td>
+<td>4.5</td>
+<td>4.12</td>
+<td>5.66</td>
+<td>-</td>
+<td>5.7</td>
+</tr>
+<tr>
+<td>CuCl</td>
+<td>F-43m</td>
+<td>23988</td>
+<td>22914</td>
+<td>1201</td>
+<td>0.56</td>
+<td>1.28</td>
+<td>0.8</td>
+<td>0.45</td>
+<td>1.59</td>
+<td>2.37</td>
+<td>3.4</td>
+</tr>
+<tr>
+<td>SrTiO3</td>
+<td>Pm-3m</td>
+<td>23076</td>
+<td>5229</td>
+<td>8082</td>
+<td>2.1</td>
+<td>2.29</td>
+<td>1.8</td>
+<td>1.81</td>
+<td>2.30</td>
+<td>-</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>ZnS</td>
+<td>F-43m</td>
+<td>41985</td>
+<td>10695</td>
+<td>1702</td>
+<td>2.02</td>
+<td>2.67</td>
+<td>2.4</td>
+<td>2.09</td>
+<td>3.59</td>
+<td>3.30</td>
+<td>3.84</td>
+</tr>
+<tr>
+<td>ZnSe</td>
+<td>F-43m</td>
+<td>41527</td>
+<td>1190</td>
+<td>96</td>
+<td>1.17</td>
+<td>1.70</td>
+<td>1.5</td>
+<td>1.22</td>
+<td>2.63</td>
+<td>2.37</td>
+<td>2.82</td>
+</tr>
+<tr>
+<td>ZnTe</td>
+<td>F-43m</td>
+<td>104196</td>
+<td>2176</td>
+<td>1198</td>
+<td>1.08</td>
+<td>1.48</td>
+<td>1.5</td>
+<td>1.07</td>
+<td>2.23</td>
+<td>2.25</td>
+<td>2.39</td>
+</tr>
+<tr>
+<td>SiC</td>
+<td>F-43m</td>
+<td>28389</td>
+<td>8062</td>
+<td>8158</td>
+<td>1.37</td>
+<td>1.37</td>
+<td>1.5</td>
+<td>1.62</td>
+<td>2.31</td>
+<td>-</td>
+<td>2.42</td>
+</tr>
+<tr>
+<td>LiF</td>
+<td>Fm-3m</td>
+<td>41409</td>
+<td>1138</td>
+<td>1130</td>
+<td>8.72</td>
+<td>8.75</td>
+<td>11.0</td>
+<td>9.48</td>
+<td>11.2</td>
+<td>-</td>
+<td>14.2</td>
+</tr>
+<tr>
+<td>KCl</td>
+<td>Fm-3m</td>
+<td>18014</td>
+<td>23193</td>
+<td>1145</td>
+<td>5.03</td>
+<td>5.05</td>
+<td>5.3</td>
+<td>5.33</td>
+<td>8.41</td>
+<td>6.53</td>
+<td>8.50</td>
+</tr>
+<tr>
+<td>AgCl</td>
+<td>Fm-3m</td>
+<td>56538</td>
+<td>22922</td>
+<td>1954</td>
+<td>0.95</td>
+<td>1.97</td>
+<td>1.1</td>
+<td>0.93</td>
+<td>2.88</td>
+<td>2.41</td>
+<td>3.25</td>
+</tr>
+<tr>
+<td>AgBr</td>
+<td>Fm-3m</td>
+<td>52246</td>
+<td>23231</td>
+<td>8583</td>
+<td>0.73</td>
+<td>1.57</td>
+<td>0.9</td>
+<td>1.00</td>
+<td>2.52</td>
+<td>2.01</td>
+<td>2.71</td>
+</tr>
+<tr>
+<td>AgI</td>
+<td>Fm-3m</td>
+<td>52361</td>
+<td>22919</td>
+<td>8566</td>
+<td>0.77</td>
+<td>1.98</td>
+<td>1.4</td>
+<td>0.39</td>
+<td>2.08</td>
+<td>2.48</td>
+<td>2.91</td>
+</tr>
+<tr>
+<td>MAE1</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>1.45</td>
+<td>1.23</td>
+<td>1.14</td>
+<td>1.33</td>
+<td>0.51</td>
+<td>0.41</td>
+<td>-</td>
+</tr>
+<tr>
+<td>MAE2</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>1.39</td>
+<td>1.19</td>
+<td>1.09</td>
+<td>1.27</td>
+<td>0.43</td>
+<td>0.42</td>
+<td>-</td>
+</tr>
+<tr>
+<td>S.C.</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>0.81</td>
+<td>0.94</td>
+<td>0.88</td>
+<td>0.84</td>
+<td>0.94</td>
+<td>0.97</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table Bandgap and SLME properties of a selection of materials with TBmBJ and G __0__ W __0</em> <em>methods in DFT to evaluate uncertainty in predictions. Here E__ g</em> <em>denotes the bandgap in eV and ɳ the calculated SLME in percentage.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Materials</strong></th>
+<th><strong>JID</strong></th>
+<th><strong>Eg(TBmBJ) </strong></th>
+<th><strong> Eg(G0W0)</strong></th>
+<th><strong>Eg(G0W0+SOC) </strong></th>
+<th><strong>Ƞ(TBmBJ)</strong></th>
+<th><strong>Ƞ(G0W0) </strong></th>
+<th><strong> Ƞ(G0W0+SOC)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CuBr</strong></td>
+<td>5176</td>
+<td>1.9</td>
+<td>2.01</td>
+<td>2.09</td>
+<td>25.6</td>
+<td>22.74</td>
+<td>21.04</td>
+</tr>
+<tr>
+<td><strong>AuI</strong></td>
+<td>3849</td>
+<td>2.1</td>
+<td>2.34</td>
+<td>2.20</td>
+<td>11.4</td>
+<td>8.83</td>
+<td>11.86</td>
+</tr>
+<tr>
+<td><strong>SiAs</strong></td>
+<td>4216</td>
+<td>1.6</td>
+<td>1.36</td>
+<td>1.33</td>
+<td>26.1</td>
+<td>23.85</td>
+<td>23.20</td>
+</tr>
+<tr>
+<td><strong>BiTeBr</strong></td>
+<td>8781</td>
+<td>1.90</td>
+<td>1.52</td>
+<td>0.79</td>
+<td>25.2</td>
+<td>32.15</td>
+<td>26.11</td>
+</tr>
+<tr>
+<td><strong>TlPt</strong><strong> 2 </strong><strong>S</strong><strong> 3</strong></td>
+<td>4630</td>
+<td>1.30</td>
+<td>1.45</td>
+<td>1.35</td>
+<td>32.70</td>
+<td>30.99</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>MAD</strong></td>
+<td>-</td>
+<td>-</td>
+<td>0.22</td>
+<td>0.34</td>
+<td>-</td>
+<td>3.23</td>
+<td>2.21</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table. Comparison of static dielectric constant for DFPT, MBJ and experiment. Experimental data were obtained from. MBJ data were obtained from our optoelectronic property database.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Materials</strong></th>
+<th><strong>JID</strong></th>
+<th><strong>DFPT</strong></th>
+<th><strong>MBJ</strong></th>
+<th><strong>Experiment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MoS2</strong></td>
+<td>54</td>
+<td>_ε_11 =15.56</td>
+<td>_ε_11=15.34</td>
+<td>_ε_11=17.0</td>
+</tr>
+<tr>
+<td><strong>MoSe2</strong></td>
+<td>57</td>
+<td>_ε_11=16.90</td>
+<td>_ε_11=16.53</td>
+<td>_ε_11=18.0</td>
+</tr>
+<tr>
+<td><strong>MoTe2</strong></td>
+<td>60</td>
+<td>_ε_11=21.72</td>
+<td>_ε_11=18.74</td>
+<td>_ε_11=20.0</td>
+</tr>
+<tr>
+<td><strong>WS2</strong></td>
+<td>72</td>
+<td>_ε_11=13.91</td>
+<td>_ε_11=13.95</td>
+<td>_ε_11=11.5</td>
+</tr>
+<tr>
+<td><strong>WSe2</strong></td>
+<td>75</td>
+<td>_ε_11=15.21</td>
+<td>_ε_11=14.32</td>
+<td>_ε_11=11.7</td>
+</tr>
+<tr>
+<td><strong>SiC</strong></td>
+<td>182</td>
+<td>7.10</td>
+<td>6.01</td>
+<td>6.552</td>
+</tr>
+<tr>
+<td><strong>AlP</strong></td>
+<td>1327</td>
+<td>10.33</td>
+<td>6.94</td>
+<td>7.54</td>
+</tr>
+<tr>
+<td><strong>BN</strong></td>
+<td>17</td>
+<td>_ε_11=4.75</td>
+<td>_ε_11=3.72</td>
+<td>_ε_11=5.06</td>
+</tr>
+<tr>
+<td><strong>BP</strong></td>
+<td>1312</td>
+<td>9.03</td>
+<td>7.94</td>
+<td>11.0</td>
+</tr>
+<tr>
+<td><strong>GaP</strong></td>
+<td>1393</td>
+<td>13.22</td>
+<td>8.33</td>
+<td>11.11</td>
+</tr>
+<tr>
+<td><strong>AlSb</strong></td>
+<td>1408</td>
+<td>12.27</td>
+<td>9.87</td>
+<td>12.04</td>
+</tr>
+<tr>
+<td><strong>ZnS</strong></td>
+<td>1702</td>
+<td>9.39</td>
+<td>4.8</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td><strong>CdTe</strong></td>
+<td>23</td>
+<td>19.59</td>
+<td>6.54</td>
+<td>10.6</td>
+</tr>
+<tr>
+<td><strong>HgTe</strong></td>
+<td>8041</td>
+<td>_ε_11=29.44</td>
+<td>_ε_11=11.22</td>
+<td>_ε_11=20</td>
+</tr>
+<tr>
+<td><strong>ZnSiP2</strong></td>
+<td>2376</td>
+<td>_ε_11=12.44</td>
+<td>_ε_11=8.56</td>
+<td>_ε_11=11.15</td>
+</tr>
+<tr>
+<td><strong>ZnGeP2</strong></td>
+<td>2355</td>
+<td>_ε_11=14.75</td>
+<td>_ε_11=9.02</td>
+<td>_ε_11=15</td>
+</tr>
+<tr>
+<td><strong>MAE</strong></td>
+<td>-</td>
+<td>2.46</td>
+<td>2.78</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table Comparison of piezoelectric coefficient max(eij) data for experiments and DFT. We take average values for the cases where the experimental data are in a range.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Mats.</strong></th>
+<th><strong>JID</strong></th>
+<th><strong>Max(eij)</strong></th>
+<th><strong>DFT</strong></th>
+<th><strong>Reference</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BN</strong></td>
+<td>57695</td>
+<td>1.55</td>
+<td>1.15</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>AlN</strong></td>
+<td>39</td>
+<td>1.39-1.55</td>
+<td>1.39</td>
+<td>10-12</td>
+</tr>
+<tr>
+<td><strong>ZnS</strong></td>
+<td>7648</td>
+<td>0.38</td>
+<td>0.13</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>ZnSe</strong></td>
+<td>8047</td>
+<td>0.35</td>
+<td>0.06</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>SiO2</strong></td>
+<td>41</td>
+<td>0.171</td>
+<td>0.16</td>
+<td>13,14</td>
+</tr>
+<tr>
+<td><strong>BaTiO3</strong></td>
+<td>110</td>
+<td>1.94-5.48</td>
+<td>4.13</td>
+<td>15,1617,18</td>
+</tr>
+<tr>
+<td><strong>LiNbO3</strong></td>
+<td>1240</td>
+<td>1.33</td>
+<td>1.59</td>
+<td>19</td>
+</tr>
+<tr>
+<td><strong>GaSb</strong></td>
+<td>35711</td>
+<td>-0.07</td>
+<td>-0.102</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>PbTiO3</strong></td>
+<td>3450</td>
+<td>3.35-5.0</td>
+<td>3.96</td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>GaN</strong></td>
+<td>30</td>
+<td>0.73</td>
+<td>0.47</td>
+<td>21</td>
+</tr>
+<tr>
+<td><strong>InN</strong></td>
+<td>1180</td>
+<td>0.97</td>
+<td>0.90</td>
+<td>22</td>
+</tr>
+<tr>
+<td><strong>AlP</strong></td>
+<td>1327</td>
+<td>-0.1</td>
+<td>0.004</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>AlAs</strong></td>
+<td>1372</td>
+<td>-0.16</td>
+<td>0</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>AlSb</strong></td>
+<td>1408</td>
+<td>-0.13</td>
+<td>0.06</td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>ZnO</strong></td>
+<td>1195</td>
+<td>1.00-1.55,0.89</td>
+<td>1.10</td>
+<td>23</td>
+</tr>
+<tr>
+<td><strong>BeO</strong></td>
+<td>20778</td>
+<td>0.1</td>
+<td>0.22</td>
+<td>23</td>
+</tr>
+<tr>
+<td><strong>MAD</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>0.21</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table Comparison of experimental and DFPT IR frequencies (cm __-1__ ).</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Mats.</strong></th>
+<th><strong>JID</strong></th>
+<th><strong>DFPT</strong></th>
+<th><strong>Experiment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ZnO</strong></td>
+<td>1195</td>
+<td>379, 410</td>
+<td>389,4131</td>
+</tr>
+<tr>
+<td><strong>AlN</strong></td>
+<td>39</td>
+<td>600, 653</td>
+<td>620,6692</td>
+</tr>
+<tr>
+<td><strong>GaN</strong></td>
+<td>30</td>
+<td>532</td>
+<td>5313,4</td>
+</tr>
+<tr>
+<td><strong>SnS</strong></td>
+<td>1109</td>
+<td>93, 144, 178, 214</td>
+<td>99, 145, 178, 220 5</td>
+</tr>
+<tr>
+<td><strong>SnSe</strong></td>
+<td>299</td>
+<td>72.6, 98.44, 125.01, 160.3</td>
+<td>80,96,123, 150 5</td>
+</tr>
+<tr>
+<td><strong>KMgF3</strong></td>
+<td>20882</td>
+<td>160.0, 287.0, 470.8</td>
+<td>168, 299, 4586</td>
+</tr>
+<tr>
+<td><strong>LiNbO3</strong></td>
+<td>1240</td>
+<td>145.0, 216.6</td>
+<td>160, 2207</td>
+</tr>
+<tr>
+<td><strong>GeS</strong></td>
+<td>2169</td>
+<td>106.4, 196.2, 236.5, 253.0, 276.9</td>
+<td>118, 201,238,258, 2808</td>
+</tr>
+<tr>
+<td><strong>MAD</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8.36</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table. Comparison of bulk modulus, K__V</em> <em>(GPa), from vdW-DF-optB88 (OPT) and experiments. The experimental data are however not data corrected for zero-point energy effects, which would lead to a slight increase__of the values.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Material</strong></th>
+<th><strong>JVASP#</strong></th>
+<th><strong>OPT</strong></th>
+<th><strong>Expt.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cu</strong></td>
+<td>14648</td>
+<td>141.4</td>
+<td>142</td>
+</tr>
+<tr>
+<td><strong>V</strong></td>
+<td>1041</td>
+<td>183.4</td>
+<td>161.9</td>
+</tr>
+<tr>
+<td><strong>C (diamond)</strong></td>
+<td>91</td>
+<td>437.4</td>
+<td>443</td>
+</tr>
+<tr>
+<td><strong>Fe</strong></td>
+<td>882</td>
+<td>193</td>
+<td>168.3</td>
+</tr>
+<tr>
+<td><strong>Si</strong></td>
+<td>1002</td>
+<td>87.3</td>
+<td>99.2</td>
+</tr>
+<tr>
+<td><strong>Ni</strong></td>
+<td>14630</td>
+<td>200.4</td>
+<td>186</td>
+</tr>
+<tr>
+<td><strong>Ge</strong></td>
+<td>890</td>
+<td>58.1</td>
+<td>75.8</td>
+</tr>
+<tr>
+<td><strong>Nb</strong></td>
+<td>934</td>
+<td>176</td>
+<td>170.2</td>
+</tr>
+<tr>
+<td><strong>Ag</strong></td>
+<td>813</td>
+<td>100.3</td>
+<td>109</td>
+</tr>
+<tr>
+<td><strong>Mo</strong></td>
+<td>925</td>
+<td>262</td>
+<td>272.5</td>
+</tr>
+<tr>
+<td><strong>Pd</strong></td>
+<td>14644</td>
+<td>176</td>
+<td>195</td>
+</tr>
+<tr>
+<td><strong>Ta</strong></td>
+<td>14750</td>
+<td>199</td>
+<td>200</td>
+</tr>
+<tr>
+<td><strong>Rh</strong></td>
+<td>14817</td>
+<td>260.8</td>
+<td>269</td>
+</tr>
+<tr>
+<td><strong>W</strong></td>
+<td>14830</td>
+<td>305.2</td>
+<td>323.2</td>
+</tr>
+<tr>
+<td><strong>Li</strong></td>
+<td>913</td>
+<td>13.9</td>
+<td>13.3</td>
+</tr>
+<tr>
+<td><strong>Ir</strong></td>
+<td>901</td>
+<td>348</td>
+<td>355</td>
+</tr>
+<tr>
+<td><strong>Na</strong></td>
+<td>25140</td>
+<td>7.7</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td><strong>Pt</strong></td>
+<td>972</td>
+<td>251.6</td>
+<td>278.3</td>
+</tr>
+<tr>
+<td><strong>K</strong></td>
+<td>14800</td>
+<td>3.9</td>
+<td>3.7</td>
+</tr>
+<tr>
+<td><strong>Au</strong></td>
+<td>825</td>
+<td>148</td>
+<td>173.2</td>
+</tr>
+<tr>
+<td><strong>Rb</strong></td>
+<td>978</td>
+<td>3.1</td>
+<td>2.9</td>
+</tr>
+<tr>
+<td><strong>Pb</strong></td>
+<td>961</td>
+<td>42.6</td>
+<td>46.8</td>
+</tr>
+<tr>
+<td><strong>Ca</strong></td>
+<td>846</td>
+<td>17.7</td>
+<td>18.4</td>
+</tr>
+<tr>
+<td><strong>LiCl</strong></td>
+<td>23864</td>
+<td>35.5</td>
+<td>35.4</td>
+</tr>
+<tr>
+<td><strong>Sr</strong></td>
+<td>21208</td>
+<td>12.5</td>
+<td>12.4</td>
+</tr>
+<tr>
+<td><strong>NaCl</strong></td>
+<td>23862</td>
+<td>27.7</td>
+<td>26.6</td>
+</tr>
+<tr>
+<td><strong>Ba</strong></td>
+<td>831</td>
+<td>9.9</td>
+<td>9.3</td>
+</tr>
+<tr>
+<td><strong>NaF</strong></td>
+<td>20326</td>
+<td>53.7</td>
+<td>51.4</td>
+</tr>
+<tr>
+<td><strong>Al</strong></td>
+<td>816</td>
+<td>70</td>
+<td>79.4</td>
+</tr>
+<tr>
+<td><strong>MgO</strong></td>
+<td>116</td>
+<td>160.7</td>
+<td>165</td>
+</tr>
+<tr>
+<td><strong>LiF</strong></td>
+<td>1130</td>
+<td>73.9</td>
+<td>69.8</td>
+</tr>
+<tr>
+<td><strong>SiC</strong></td>
+<td>182</td>
+<td>213.3</td>
+<td>225</td>
+</tr>
+<tr>
+<td><strong>TiO2-anatase</strong></td>
+<td>314</td>
+<td>196</td>
+<td>191.9</td>
+</tr>
+<tr>
+<td><strong>GaAs</strong></td>
+<td>1174</td>
+<td>62</td>
+<td>75.6</td>
+</tr>
+<tr>
+<td><strong>TiO2-rutile</strong></td>
+<td>10036</td>
+<td>226.3</td>
+<td>243.5</td>
+</tr>
+<tr>
+<td><strong>P (black)</strong></td>
+<td>7818</td>
+<td>41</td>
+<td>36</td>
+</tr>
+<tr>
+<td>MAE (GPa):</td>
+<td>8.51</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Table : Chemical formula, experimental Seebeck value (_μV/K)</em>, DFT value, JARVIS-ID, doping concentration, doping type, temperature, space-group and reference data for the experimental vs DFT comparisons._</p>
+<table>
+<thead>
+<tr>
+<th><strong>Formula</strong></th>
+<th><strong>Exp</strong></th>
+<th><strong>DFT</strong></th>
+<th><strong>JID</strong></th>
+<th><strong>Dop.conc.</strong><strong> (/cm3) </strong></th>
+<th><strong> type </strong></th>
+<th><strong> T</strong><strong>(K)</strong></th>
+<th><strong>Spg.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bi2Te3</strong></td>
+<td>116</td>
+<td>124.7357</td>
+<td>JVASP-25</td>
+<td>7.78E+19</td>
+<td>p</td>
+<td>420</td>
+<td>166</td>
+</tr>
+<tr>
+<td><strong>Bi2Se3</strong></td>
+<td>-70</td>
+<td>-136.9</td>
+<td>JVASP-1067</td>
+<td>-2.20E+19</td>
+<td>n</td>
+<td>420</td>
+<td>166</td>
+</tr>
+<tr>
+<td><strong>CuInTe2</strong></td>
+<td>254</td>
+<td>203.5364</td>
+<td>JVASP-3495</td>
+<td>1.60E+19</td>
+<td>P</td>
+<td>300</td>
+<td>122</td>
+</tr>
+<tr>
+<td><strong>CuGaTe2</strong></td>
+<td>380</td>
+<td>448.9839</td>
+<td>JVASP-2295</td>
+<td>1.00E+18</td>
+<td>p</td>
+<td>300</td>
+<td>122</td>
+</tr>
+<tr>
+<td><strong>AgTlTe</strong></td>
+<td>550</td>
+<td>721</td>
+<td>JVASP-9744</td>
+<td>1.00E+17</td>
+<td>p</td>
+<td>320</td>
+<td>62</td>
+</tr>
+<tr>
+<td><strong>ErNiSb</strong></td>
+<td>258</td>
+<td>268.71</td>
+<td>JVASP-1903</td>
+<td>1.42E+19</td>
+<td>p</td>
+<td>335</td>
+<td>216</td>
+</tr>
+<tr>
+<td><strong>Cu2ZnSnSe4</strong></td>
+<td>-26.02</td>
+<td>-23.98</td>
+<td>JVASP-17430</td>
+<td>1.00E+18</td>
+<td>p</td>
+<td>293</td>
+<td>121</td>
+</tr>
+<tr>
+<td><strong>CoNbSn</strong></td>
+<td>-69</td>
+<td>-2.22</td>
+<td>JVASP-18668</td>
+<td>5.97E+16</td>
+<td>p</td>
+<td>318</td>
+<td>216</td>
+</tr>
+<tr>
+<td><strong>AlFe2V</strong></td>
+<td>-107</td>
+<td>-32.3911</td>
+<td>JVASP-15637</td>
+<td>5.00E+20</td>
+<td>n</td>
+<td>300</td>
+<td>225</td>
+</tr>
+<tr>
+<td><strong>CoSbZr</strong></td>
+<td>-62</td>
+<td>-43.9953</td>
+<td>JVASP-18207</td>
+<td>2.72E+20</td>
+<td>n</td>
+<td>335</td>
+<td>216</td>
+</tr>
+<tr>
+<td><strong>SnSe</strong></td>
+<td>586</td>
+<td>674.7</td>
+<td>JVASP-299</td>
+<td>3.16E+17</td>
+<td>p</td>
+<td>523</td>
+<td>62</td>
+</tr>
+<tr>
+<td><strong>SnTe</strong></td>
+<td>103</td>
+<td>111.855</td>
+<td>JVASP-7860</td>
+<td>1.00E+21</td>
+<td>p</td>
+<td>817</td>
+<td>225</td>
+</tr>
+<tr>
+<td><strong>Cu2Se</strong></td>
+<td>258</td>
+<td>148.2624</td>
+<td>JVASP-18192</td>
+<td>2.00E+21</td>
+<td>p</td>
+<td>900</td>
+<td>216</td>
+</tr>
+<tr>
+<td><strong>Mg2Sn</strong></td>
+<td>-71.5</td>
+<td>-91.3387</td>
+<td>JVASP-14507</td>
+<td>-2.00E+19</td>
+<td>n</td>
+<td>400</td>
+<td>225</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table Comparison of current density functional (J-DFT) predictions with experimental (Exp) and previously (Prev.-DFT) reported Electric Field Gradient, V__zz</em> <em>(10__21 __Vm__ -2__) data. The MAD (Mean Absolute Deviation), and MAPD (Mean Absolute Percentage Difference) values are calculated for the whole data. Details of each material are provided at its corresponding webpage. Please look into the references (and references therein) for experimental and previously calculated data.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Material</strong></th>
+<th><strong>JID</strong></th>
+<th><strong>Atom</strong></th>
+<th><strong>V zz (Exp) </strong></th>
+<th><strong>V zz (J-DFT) </strong></th>
+<th><strong>V zz (Prev.-DFT) </strong></th>
+<th><strong>Δ</strong></th>
+<th><strong>Δ%</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cl2</td>
+<td>855</td>
+<td>Cl</td>
+<td>55.1858</td>
+<td>52.85</td>
+<td>54.2343</td>
+<td>2.33</td>
+<td>4.22</td>
+</tr>
+<tr>
+<td>Br2</td>
+<td>840</td>
+<td>Br</td>
+<td>95.6958</td>
+<td>88.86</td>
+<td>94.4443</td>
+<td>6.83</td>
+<td>7.14</td>
+</tr>
+<tr>
+<td>I2</td>
+<td>895</td>
+<td>I</td>
+<td>113.0058</td>
+<td>108.70</td>
+<td>119.0143</td>
+<td>4.30</td>
+<td>3.81</td>
+</tr>
+<tr>
+<td>Be</td>
+<td>25056</td>
+<td>Be</td>
+<td>0.04459</td>
+<td>0.072</td>
+<td>0.0660</td>
+<td>0.028</td>
+<td>63.64</td>
+</tr>
+<tr>
+<td>Mg</td>
+<td>14840</td>
+<td>Mg</td>
+<td>0.04859</td>
+<td>0.079</td>
+<td>0.0460</td>
+<td>0.031</td>
+<td>64.58</td>
+</tr>
+<tr>
+<td>Sc</td>
+<td>996</td>
+<td>Sc</td>
+<td>0.3859</td>
+<td>1.78</td>
+<td>0.9660</td>
+<td>1.40</td>
+<td>368.4</td>
+</tr>
+<tr>
+<td>Ti</td>
+<td>14815</td>
+<td>Ti</td>
+<td>1.6159,61</td>
+<td>1.64</td>
+<td>1.7560</td>
+<td>0.03</td>
+<td>1.86</td>
+</tr>
+<tr>
+<td>Co</td>
+<td>858</td>
+<td>Co</td>
+<td>2.959</td>
+<td>0.52</td>
+<td>0.2960</td>
+<td>2.38</td>
+<td>82.06</td>
+</tr>
+<tr>
+<td>Zn</td>
+<td>1056</td>
+<td>Zn</td>
+<td>3.4859</td>
+<td>5.62</td>
+<td>4.2960</td>
+<td>2.14</td>
+<td>61.50</td>
+</tr>
+<tr>
+<td>Zr</td>
+<td>14612</td>
+<td>Zr</td>
+<td>4.4059</td>
+<td>3.50</td>
+<td>4.1460</td>
+<td>0.90</td>
+<td>20.45</td>
+</tr>
+<tr>
+<td>Tc</td>
+<td>1020</td>
+<td>Tc</td>
+<td>1.8359</td>
+<td>1.67</td>
+<td>1.7460</td>
+<td>0.16</td>
+<td>8.74</td>
+</tr>
+<tr>
+<td>Ru</td>
+<td>987</td>
+<td>Ru</td>
+<td>0.9759</td>
+<td>1.52</td>
+<td>1.6260</td>
+<td>0.55</td>
+<td>56.70</td>
+</tr>
+<tr>
+<td>Cd</td>
+<td>14832</td>
+<td>Cd</td>
+<td>6.5059</td>
+<td>7.56</td>
+<td>8.1360</td>
+<td>1.06</td>
+<td>16.31</td>
+</tr>
+<tr>
+<td>La</td>
+<td>910</td>
+<td>La</td>
+<td>1.6259</td>
+<td>2.24</td>
+<td>0.9160</td>
+<td>0.62</td>
+<td>38.27</td>
+</tr>
+<tr>
+<td>Hf</td>
+<td>14590</td>
+<td>Hf</td>
+<td>7.3359</td>
+<td>8.87</td>
+<td>8.1260</td>
+<td>1.54</td>
+<td>21.01</td>
+</tr>
+<tr>
+<td>Re</td>
+<td>981</td>
+<td>Re</td>
+<td>5.1259</td>
+<td>6.14</td>
+<td>6.4960</td>
+<td>1.02</td>
+<td>19.92</td>
+</tr>
+<tr>
+<td>Os</td>
+<td>952</td>
+<td>Os</td>
+<td>4.1659</td>
+<td>6.00</td>
+<td>7.0260</td>
+<td>1.84</td>
+<td>44.23</td>
+</tr>
+<tr>
+<td>BI3</td>
+<td>3630</td>
+<td>I</td>
+<td>71.2962</td>
+<td>68.98</td>
+<td>-</td>
+<td>2.31</td>
+<td>3.24</td>
+</tr>
+<tr>
+<td>CF3I</td>
+<td>32512</td>
+<td>I</td>
+<td>124.3463</td>
+<td>123.22</td>
+<td>-</td>
+<td>1.12</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>CIN</td>
+<td>5758</td>
+<td>I</td>
+<td>157.2164</td>
+<td>151.0</td>
+<td>-</td>
+<td>6.21</td>
+<td>3.95</td>
+</tr>
+<tr>
+<td>NaNO2</td>
+<td>1429</td>
+<td>Na</td>
+<td>0.43865</td>
+<td>0.552</td>
+<td>0.57566</td>
+<td>0.114</td>
+<td>26.03</td>
+</tr>
+<tr>
+<td>NaNO2</td>
+<td>1429</td>
+<td>N</td>
+<td>11.1065</td>
+<td>12.194</td>
+<td>11.77266</td>
+<td>1.094</td>
+<td>9.86</td>
+</tr>
+<tr>
+<td>Cu2O</td>
+<td>1216</td>
+<td>Cu</td>
+<td>9.8067</td>
+<td>6.47</td>
+<td>6.76566</td>
+<td>3.33</td>
+<td>33.98</td>
+</tr>
+<tr>
+<td>TiO2</td>
+<td>10036</td>
+<td>Ti</td>
+<td>2.2168</td>
+<td>2.098</td>
+<td>2.26966</td>
+<td>0.112</td>
+<td>5.07</td>
+</tr>
+<tr>
+<td>TiO2</td>
+<td>10036</td>
+<td>O</td>
+<td>2.3868</td>
+<td>2.21</td>
+<td>2.23566</td>
+<td>0.17</td>
+<td>7.14</td>
+</tr>
+<tr>
+<td>SrTiO3</td>
+<td>8082</td>
+<td>O</td>
+<td>1.6269</td>
+<td>1.24</td>
+<td>1.0070</td>
+<td>0.38</td>
+<td>23.46</td>
+</tr>
+<tr>
+<td>BaTiO3</td>
+<td>8029</td>
+<td>O</td>
+<td>2.4669</td>
+<td>3.56</td>
+<td>2.3570</td>
+<td>1.10</td>
+<td>44.72</td>
+</tr>
+<tr>
+<td>Li3N</td>
+<td>1375</td>
+<td>N</td>
+<td>1.0471</td>
+<td>1.25</td>
+<td>1.0966</td>
+<td>0.21</td>
+<td>20.19</td>
+</tr>
+<tr>
+<td>Li3N</td>
+<td>1375</td>
+<td>Li(2c)</td>
+<td>0.3071</td>
+<td>0.225</td>
+<td>0.29166</td>
+<td>0.075</td>
+<td>25.00</td>
+</tr>
+<tr>
+<td>Li3N</td>
+<td>1375</td>
+<td>Li(1b)</td>
+<td>0.6071</td>
+<td>0.50</td>
+<td>0.61666</td>
+<td>0.144</td>
+<td>24.00</td>
+</tr>
+<tr>
+<td>FeSi</td>
+<td>8178</td>
+<td>Fe</td>
+<td>4.4572,73</td>
+<td>4.84</td>
+<td>4.9243</td>
+<td>0.39</td>
+<td>8.76</td>
+</tr>
+<tr>
+<td>FeS2(marcasite)</td>
+<td>2142</td>
+<td>Fe</td>
+<td>3.074</td>
+<td>2.93</td>
+<td>3.2143</td>
+<td>0.07</td>
+<td>2.33</td>
+</tr>
+<tr>
+<td>FeS2(pyrite)</td>
+<td>9117</td>
+<td>Fe</td>
+<td>3.6674</td>
+<td>3.51</td>
+<td>3.4043</td>
+<td>0.15</td>
+<td>4.10</td>
+</tr>
+<tr>
+<td>2H-MoS2</td>
+<td>54</td>
+<td>Mo</td>
+<td>7.0939,40</td>
+<td>7.70</td>
+<td>-</td>
+<td>0.61</td>
+<td>8.60</td>
+</tr>
+<tr>
+<td>2H-MoS2</td>
+<td>54</td>
+<td>S</td>
+<td>5.5439,40</td>
+<td>5.33</td>
+<td>-</td>
+<td>0.21</td>
+<td>3.80</td>
+</tr>
+<tr>
+<td>2H-WS2</td>
+<td>72</td>
+<td>S</td>
+<td>4.8239,40</td>
+<td>4.53</td>
+<td>-</td>
+<td>0.29</td>
+<td>6.22</td>
+</tr>
+<tr>
+<td>CaGa2</td>
+<td>16464</td>
+<td>Ga</td>
+<td>4.4475</td>
+<td>3.55</td>
+<td>3.7776</td>
+<td>0.89</td>
+<td>20.05</td>
+</tr>
+<tr>
+<td>SrGa2</td>
+<td>14853</td>
+<td>Ga</td>
+<td>5.2275</td>
+<td>2.54</td>
+<td>4.1376</td>
+<td>2.68</td>
+<td>51.34</td>
+</tr>
+<tr>
+<td>BaGa2</td>
+<td>19628</td>
+<td>Ga</td>
+<td>4.4875</td>
+<td>5.10</td>
+<td>4.3876</td>
+<td>0.62</td>
+<td>13.84</td>
+</tr>
+<tr>
+<td>NaGa4</td>
+<td>14728</td>
+<td>Ga(e)</td>
+<td>6.4976</td>
+<td>5.20</td>
+<td>6.1876</td>
+<td>1.29</td>
+<td>19.88</td>
+</tr>
+<tr>
+<td>NaGa4</td>
+<td>14728</td>
+<td>Ga(d)</td>
+<td>4.6476</td>
+<td>4.33</td>
+<td>4.4476</td>
+<td>0.31</td>
+<td>6.68</td>
+</tr>
+<tr>
+<td>CaGa4</td>
+<td>20533</td>
+<td>Ga(e)</td>
+<td>2.8976</td>
+<td>2.67</td>
+<td>2.8076</td>
+<td>0.22</td>
+<td>7.61</td>
+</tr>
+<tr>
+<td>CaGa4</td>
+<td>20533</td>
+<td>Ga(d)</td>
+<td>4.8776</td>
+<td>4.99</td>
+<td>4.7376</td>
+<td>0.12</td>
+<td>2.46</td>
+</tr>
+<tr>
+<td>SrGa4</td>
+<td>20206</td>
+<td>Ga(e)</td>
+<td>2.5176</td>
+<td>1.67</td>
+<td>2.2476</td>
+<td>0.84</td>
+<td>33.47</td>
+</tr>
+<tr>
+<td>SrGa4</td>
+<td>20206</td>
+<td>Ga(d)</td>
+<td>5.9576</td>
+<td>5.31</td>
+<td>5.6476</td>
+<td>0.64</td>
+<td>10.76</td>
+</tr>
+<tr>
+<td>TaP</td>
+<td>79643</td>
+<td>Ta</td>
+<td>3.0077</td>
+<td>2.5</td>
+<td>3.5477</td>
+<td>0.50</td>
+<td>16.67</td>
+</tr>
+<tr>
+<td>UAs2</td>
+<td>19797</td>
+<td>U</td>
+<td>15.078</td>
+<td>9.7</td>
+<td>13.0357</td>
+<td>5.3</td>
+<td>35.3</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table. Mean Absolute Error (MAE) for JARVIS-DFT data with respect to available experimental data for various material properties.</em></p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>#Materials</strong></th>
+<th><strong>MAE</strong></th>
+<th><strong>Typical range</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Formation energy (eV/atom)</strong></td>
+<td>1317</td>
+<td>0.128</td>
+<td>-4 to 2</td>
+</tr>
+<tr>
+<td><strong>OptB88vdW-bandgaps (eV)</strong></td>
+<td>54</td>
+<td>1.33</td>
+<td>0 to 10</td>
+</tr>
+<tr>
+<td><strong>TBmBJ-bandgaps (eV)</strong></td>
+<td>54</td>
+<td>0.51</td>
+<td>0 to 10</td>
+</tr>
+<tr>
+<td><strong>Bulk modulus (GPa)</strong></td>
+<td>21</td>
+<td>5.75</td>
+<td>0 to 250</td>
+</tr>
+<tr>
+<td><strong>Electronic (𝜀11) OPT</strong></td>
+<td>28</td>
+<td>3.2</td>
+<td>0 to 60</td>
+</tr>
+<tr>
+<td><strong>Electronic (𝜀11) MBJ</strong></td>
+<td>28</td>
+<td>2.62</td>
+<td>0 to 60</td>
+</tr>
+<tr>
+<td><strong>Solar-eff. (SLME) (%) (MBJ)</strong></td>
+<td>5</td>
+<td>6.55</td>
+<td>0 to 33.7</td>
+</tr>
+<tr>
+<td><strong>Max. piezoelectric strain coeff (Cm-2)</strong></td>
+<td>16</td>
+<td>0.21</td>
+<td>0 to 2</td>
+</tr>
+<tr>
+<td><strong>Dielectric constant (𝜀11) (DFPT)</strong></td>
+<td>16</td>
+<td>2.46</td>
+<td>0 to 60</td>
+</tr>
+<tr>
+<td><strong>Seebeck coefficient (μV/K)</strong></td>
+<td>14</td>
+<td>54.7</td>
+<td>-600 to 600</td>
+</tr>
+<tr>
+<td><strong>Electric field gradient Vzz (1021Vm-2)</strong></td>
+<td>37</td>
+<td>1.17</td>
+<td>0 to 100</td>
+</tr>
+<tr>
+<td><strong>IR mode (cm-1)</strong></td>
+<td>8</td>
+<td>8.36</td>
+<td>0 to 4000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://arxiv.org/abs/2007.01831">JARVIS: An Integrated Infrastructure for Data-driven Materials Design, arXiv:2007.01831 (2020)</a>.</li>
+<li><a href="https://www.nature.com/articles/s41598-017-05402-0">High-throughput Identification and Characterization of Two-dimensional Materials using Density functional theory, Scientific Reports 7, 5179 (2017)</a>.</li>
+<li><a href="https://www.nature.com/articles/sdata201882">Computational Screening of High-performance Optoelectronic Materials using OptB88vdW and TBmBJ Formalisms, Scientific Data 5, 180082 (2018).</a></li>
+<li><a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.98.014107">Elastic properties of bulk and low-dimensional materials using Van der Waals density functional, Phys. Rev. B, 98, 014107 (2018).</a></li>
+<li><a href="https://www.nature.com/articles/s41598-019-45028-y">High-throughput Discovery of Topologically Non-trivial Materials using Spin-orbit Spillage, Scientific Reports 9, 8534 (2019).</a></li>
+<li><a href="https://linkinghub.elsevier.com/retrieve/pii/S0927025619300813">Convergence and machine learning predictions of Monkhorst-Pack k-points and plane-wave cut-off in high-throughput DFT calculations, Comp. Mat. Sci. 161, 300 (2019).</a></li>
+<li><a href="https://www.nature.com/articles/s41524-020-0337-2">High-throughput Density Functional Perturbation Theory and Machine Learning Predictions of Infrared, Piezoelectric and Dielectric Responses,npj Computational Materials, 6, 64 (2020).</a></li>
+<li><a href="https://www.nature.com/articles/s41524-020-0319-4">Computational Search for Magnetic and Non-magnetic 2D Topological Materials using Unified Spin-orbit Spillage Screening, npj Computational Materials, 6, 49 (2020).</a></li>
+<li><a href="https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.9b02166">Accelerated Discovery of Efficient Solar-cell Materials using Quantum and Machine-learning Methods, Chem. Mater., 31, 15, 5900 (2019).</a></li>
+<li><a href="https://iopscience.iop.org/article/10.1088/1361-648X/aba06b/meta">Data-driven Discovery of 3D and 2D Thermoelectric Materials, J. Phys.: Condens. Matter 32, 475501 (2020).</a></li>
+<li><a href="https://arxiv.org/abs/2004.03025">Efficient Computational Design of 2D van der Waals Heterostructures: Band-Alignment, Lattice-Mismatch, Web-app Generation and Machine-learning, submitted.</a></li>
+<li><a href="https://arxiv.org/abs/2005.09255">Density Functional Theory based Electric Field Gradient Database, arXiv:2005.09255.</a></li>
+<li><a href="https://arxiv.org/abs/2007.01205">Database of Wannier Tight-binding Hamiltonians using High-throughput Density Functional Theory, arXiv:2007.01205.</a></li>
+<li><a href="https://arxiv.org/abs/1912.09027">Density Functional Theory and Deep-learning to Accelerate Data Analytics in Scanning Tunneling Microscopy, arXiv:1912.09027.</a></li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "FINAL_N_ATLAS_V1": {
+    "model_name": "n_property_atlas_v1",
+    "carrier_type": "n",
+    "included_views": [
+      "Eg",
+      "m_electron",
+      "n_transport"
+    ],
+    "alpha_per_view": {
+      "Eg": 1,
+      "m_electron": 1,
+      "n_transport": 1
+    },
+    "lambda": 0.3,
+    "layer_scale_factor": "mean_strength->1",
+    "anchor_weight_rule": "lambda/m_i",
+    "latent_dimension": 20,
+    "graph_normalization": "symmetric Laplacian",
+    "k": 15,
+    "duplicate_policy": "keep all JIDs",
+    "random_seed": 42,
+    "structure": "linked auxiliary"
+  },
+  "FINAL_P_ATLAS_V1": {
+    "model_name": "p_property_atlas_v1",
+    "carrier_type": "p",
+    "included_views": [
+      "Eg",
+      "m_hole",
+      "p_transport"
+    ],
+    "alpha_per_view": {
+      "Eg": 1,
+      "m_hole": 1,
+      "p_transport": 1
+    },
+    "lambda": 0.3,
+    "latent_dimension": 20,
+    "structure": "linked auxiliary"
+  },
+  "STATUS": {
+    "N_ATLAS_SUPPORTED": true,
+    "P_ATLAS_SUPPORTED": true,
+    "STRUCTURE_IN_N_COMMON_SPACE": false,
+    "STRUCTURE_IN_P_COMMON_SPACE": false,
+    "COMBINED_NP_ATLAS_SUPPORTED": false,
+    "UNIFIED_MANIFOLD_SUPPORTED": true,
+    "RANDOM_ANCHOR_CONTROL_PASSED": true,
+    "DUPLICATE_SENSITIVITY_PASSED": true,
+    "DUPLICATE_SENSITIVITY_KNN_OVERLAP": {"n": 0.96, "p": 0.92}
+  }
+}
